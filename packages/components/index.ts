@@ -1,12 +1,12 @@
-import components from './component'
-
+import * as components from './src/index'
+export * from './src/index'
 import { App } from 'vue'
 
 export default {
-    install: (app: App) => {
-        for(let c in components){
-            console.log('1111')
-            app.use(components[c])
-        }
+  install: (app: App) => {
+    console.log('222', components)
+    for (const c in components) {
+      app.use(components[c])
     }
+  }
 }

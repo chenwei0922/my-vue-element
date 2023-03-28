@@ -4,6 +4,10 @@
 `name` 项目的名称，也是将来发布包的名字
 `type:module` 使用es6语法
 `main` 指定将来发布包的入口
+`module` 若组件库环境支持esmodule，则入口文件变成这个字段
+`files` 发布到npm上的文件目录
+`sideEffects` 忽略tree shaking带来的副作用。比如打包后的代码包含`import "./xxx.css"`
+`typings` 声明文件入口
 
 # pnpm
 `pnpm add vue --save-peer -w`

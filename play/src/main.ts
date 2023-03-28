@@ -1,8 +1,8 @@
-import {createApp} from 'vue'
+import { createApp } from 'vue'
 import App from './app.vue'
 import './main.css'
 
-//测试挂载全局组件库
+// 测试挂载全局组件库
 import chenwei02 from '@chenwei02/components'
 
 const app = createApp(App)
