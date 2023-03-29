@@ -7,10 +7,19 @@
   "keywords": ["chenwei02", "vue3组件库"],
   "sideEffects": ["**/*.css"],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "release-it"
   },
   "author": "陈十一",
   "description": "Vue3组件库",
   "license": "ISC",
-  "typings": "lib/index.d.ts"
+  "typings": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chenwei0922/my-vue-element.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chenwei0922/my-vue-element/issues"
+  },
+  "homepage": "https://github.com/chenwei0922/my-vue-element#readme"
 }
