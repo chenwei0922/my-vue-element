@@ -43,6 +43,8 @@
 `stylelint-config-prettier`
 `stylelint-prettier`
 
+# 打包
+`gulp` `@types/gulp` `gulp-sass` `@types/gulp-sass` `gulp-autoprefixer` `@types/gulp-autoprefixer`
 
 
 
