@@ -22,10 +22,15 @@
   },
   "author": "陈十一",
   "description": "Vue3组件库",
-  "license": "ISC",
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
+  "browserslist": [
+    "> 1%",
+    "not ie 11",
+    "not op_mini all"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/chenwei0922/my-vue-element.git"
