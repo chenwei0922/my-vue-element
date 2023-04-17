@@ -4,7 +4,8 @@ export default defineConfig({
   description: "网站描述",
   author: "陈十一",
   // 根目录
-  base: "/my-vue-element/",
+  base: "/qy-element/",
+  dest: 'public',
   markdown: {
     //显示代码行数
     lineNumbers: true
