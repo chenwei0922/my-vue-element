@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # 忽略错误
-# set -e
+set -e
 
 # 构建
 npm run docs:build
@@ -21,6 +21,8 @@ git commit -m 'deploy'
 
 # 如果是部署到 https://<USERNAME>.github.io/<REPO>
 # git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
-git push -f origin master
+git push -f git@github.com:chenwei0922/qy-element.git master:gh-pages
 
-# cd -
+# git push -f origin master
+
+cd -
