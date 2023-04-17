@@ -1,6 +1,7 @@
 import * as components from './src/index'
-export * from './src/index'
 import { App } from 'vue'
+
+export * from './src/index'
 
 export default {
   install: (app: App) => {

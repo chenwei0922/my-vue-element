@@ -1,0 +1,29 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": []
+    }
+  },
+  "devDependencies": {
+    "vitepress": "1.0.0-alpha.64"
+  },
+  "dependencies": {
+    "@algolia/client-search": "^4.16.0",
+    "@chenwei02/components": "workspace:^1.0.0",
+    "@chenwei02/element": "workspace:^1.0.1",
+    "vue": "^3.2.47"
+  }
+}
