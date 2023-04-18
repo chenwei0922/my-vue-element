@@ -4,7 +4,7 @@
 set -e
 
 # 构建
-pnpm run docs:build
+pnpm run build
 
 # 进入待发布的目录
 cd docs/.vitepress/dist

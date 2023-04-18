@@ -31,7 +31,7 @@ jobs:
       - run: pnpm --filter site install
       
       #打包
-      - run: pnpm --filter site run docs:build
+      - run: pnpm run docs:build
 
       # 部署到github pages
       - name: Deploy
