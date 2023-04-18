@@ -26,6 +26,7 @@ jobs:
         with:
           version: 7.28.0
   
+      - run: pnpm install
       #安装依赖
       - run: pnpm --filter site install
       
