@@ -26,9 +26,3 @@ features:
     title: Simple and minimal, always 
     details: Lorem ipsum...
 ---
-
-<script setup>
-    import { QVButton } from '@chenwei02/element'
-</script>
-<QVButton>ffsdfsd</QVButton>
-<QVButton type="primary" style="color:red">ffsdfsd</QVButton>
