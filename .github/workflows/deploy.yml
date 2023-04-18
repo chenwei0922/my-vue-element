@@ -35,7 +35,7 @@ jobs:
       
       #打包Docs
       - name: Build Docs
-      - run: pnpm run docs:build
+        run: pnpm run docs:build
 
       # 部署到github pages
       - name: Deploy Docs
