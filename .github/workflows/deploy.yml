@@ -29,9 +29,9 @@ jobs:
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
       
-      - run: pnpm install
-      #安装依赖
-      - run: pnpm --filter site install
+      # - run: pnpm install
+      # #安装依赖
+      # - run: pnpm --filter site install
       
       #打包Docs
       - name: Build Docs
