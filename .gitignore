@@ -29,5 +29,5 @@ coverage
 package-lock.json
 yarn.lock
 
-*/chenwei02/es
-*/chenwei02/lib
+packages/chenwei02/es
+packages/chenwei02/lib

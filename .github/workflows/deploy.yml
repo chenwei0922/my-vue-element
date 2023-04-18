@@ -33,6 +33,7 @@ jobs:
       # #安装依赖
       - run: pnpm --filter site install
       
+      - run: pnpm run build:chenwei02 
       #打包Docs
       - name: Build Docs
         run: pnpm run docs:build
