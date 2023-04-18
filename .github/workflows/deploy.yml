@@ -19,6 +19,12 @@ jobs:
         uses: actions/setup-node@master
         with:
           node-version: '16.x'
+      
+      #使用pnpm
+      - name: Pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7.28.0
   
       #安装依赖
       - run: pnpm --filter site install
