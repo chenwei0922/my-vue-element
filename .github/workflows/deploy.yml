@@ -27,7 +27,7 @@ jobs:
           version: 7.28.0
   
       - name: Install dependencies
-        run: pnpm i --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
       
       # - run: pnpm install
       # #安装依赖
