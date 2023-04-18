@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as a}from"./chunks/framework.fc63eae0.js";const u=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"guide/quickstart.md","lastUpdated":1681721180000}'),r={name:"guide/quickstart.md"};function s(c,o,n,i,d,p){return a(),e("div")}const m=t(r,[["render",s]]);export{u as __pageData,m as default};

@@ -21,12 +21,10 @@ jobs:
           node-version: '16.x'
   
       #安装依赖
-      - name: Install dependencies
-        run: pnpm install 
+      - run: pnpm --filter site install
       
       #打包
-      - name: Build VitePress
-        run: pnpm run docs:build -F site
+      - run: pnpm --filter site run docs:build
 
       # 部署到github pages
       - name: Deploy
