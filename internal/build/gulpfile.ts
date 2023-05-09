@@ -16,7 +16,7 @@ export const withTaskName = <T extends TaskFunction>(name: string, fn: T) =>
 //     // run(`pnpm run start ${name}`, buildRoot)
 //   )
 
-export const copyFiles = () => {
+export const copyFiles = async () => {
   return Promise.all([
     copyFile(
       path.join(pkgRoot, '/chenwei02/package.json'),
@@ -47,9 +47,10 @@ export const copyThemeBundle = async () => {
 // 复制样式
 export const copyFullStyle = async () => {
   await mkdir(path.resolve(qyOutput, './dist'), { recursive: true })
-  await copyFile(
+  cp(
     path.resolve(qyOutput, './theme/index.css'),
-    path.resolve(qyOutput, './dist/index.css')
+    path.resolve(qyOutput, './dist/index.css'),
+    { recursive: true }
   )
 }
 
@@ -67,6 +68,6 @@ export default series(
     run('pnpm run -C ../../packages/theme build')
   ),
   copyThemeBundle,
-  copyFullStyle,
-  copyFiles
+  copyFiles,
+  copyFullStyle
 )

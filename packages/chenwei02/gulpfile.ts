@@ -6,7 +6,7 @@ import autoprefixer from 'gulp-autoprefixer'
 
 // 删除上次的打包内容
 export const cleanComponent = () => {
-  return run('rm -rf dist/*')
+  return run('rm -rf dist/')
 }
 
 // 打包内部样式
