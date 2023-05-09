@@ -55,18 +55,20 @@ export default defineConfig({
     vue(),
     dts({
       entryRoot: './',
-      outputDir: ['./dist/lib', './dist/es'],
+      outputDir: ['./dist/es', './dist/lib'],
       // 指定使用的tsconfig.json为我们整个项目根目录下,如果不配置,你也可以在components下新建tsconfig.json
       tsConfigFilePath: '../../tsconfig.json',
       beforeWriteFile(filePath, content) {
-        // console.log("file=", filePath, content.includes("@chenwei02/"))
-        if (/\/lib/i.test(filePath)) {
-          content = content.replace(/@chenwei02\//g, 'qy-element/lib/')
-        } else if (/\/es/i.test(filePath)) {
-          content = content.replace(/@chenwei02\//g, 'qy-element/es/')
+        console.log('file=', filePath, content.includes('@chenwei02/'))
+        if (content.includes('@chenwei02/')) {
+          if (/\/lib\//g.test(filePath)) {
+            content = content.replace(/@chenwei02\//g, 'qy-element/lib/')
+          } else if (/\/es\//g.test(filePath)) {
+            content = content.replace(/@chenwei02\//g, 'qy-element/es/')
+          }
+          // return content
+          return { filePath, content }
         }
-        // return content
-        return { filePath, content }
       }
     }),
     DefineOptions(),
