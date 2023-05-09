@@ -36,7 +36,7 @@ jobs:
 
       # 安装文档所需依赖
       - name: Install Site Dependencies 
-      - run: pnpm --filter site install
+        run: pnpm --filter site install
       
       #打包Docs
       - name: Build Docs
