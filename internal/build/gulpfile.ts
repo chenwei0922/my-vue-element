@@ -1,7 +1,7 @@
 import { copyFile, mkdir, cp } from 'fs/promises'
-import { run, pkgRoot, qyOutput } from '@chenwei02/build-utils'
+import { run, pkgRoot, qyOutput, projRoot } from '@chenwei02/build-utils'
 import path from 'node:path'
-import { series, parallel, TaskFunction } from 'gulp'
+import { series, TaskFunction } from 'gulp'
 
 export const withTaskName = <T extends TaskFunction>(name: string, fn: T) =>
   Object.assign(fn, { displayName: name })
@@ -25,7 +25,11 @@ export const copyFiles = () => {
     }),
     cp(path.join(pkgRoot, '/chenwei02/dist/es'), path.join(qyOutput, '/es'), {
       recursive: true
-    })
+    }),
+    copyFile(
+      path.join(projRoot, '/global.d.ts'),
+      path.join(qyOutput, '/global.d.ts')
+    )
   ])
 }
 
@@ -53,5 +57,5 @@ export default series(
   ),
   copyFullStyle,
 
-  parallel([copyFiles])
+  copyFiles
 )

@@ -38,7 +38,7 @@ importers:
       typescript: ^4.9.5
       unplugin-vue-define-options: ^1.2.3
       vite: ^4.1.4
-      vite-plugin-dts: 1.4.1
+      vite-plugin-dts: ^2.3.0
       vue: ^3.2.47
       vue-eslint-parser: ^9.1.0
       vue-router: ^4.1.6
@@ -79,7 +79,7 @@ importers:
       typescript: 4.9.5
       unplugin-vue-define-options: 1.3.5_vue@3.2.47
       vite: 4.3.5_5tgvkgc5alnw62aykujfkn2him
-      vite-plugin-dts: 1.4.1_uw3jrwe7f6wzb2eeyny6thwmae
+      vite-plugin-dts: 2.3.0_uw3jrwe7f6wzb2eeyny6thwmae
       vue: 3.2.47
       vue-eslint-parser: 9.2.1_eslint@8.40.0
       vue-router: 4.1.6_vue@3.2.47
@@ -104,7 +104,10 @@ importers:
     specifiers: {}
 
   packages/components:
-    specifiers: {}
+    specifiers:
+      '@chenwei02/utils': workspace:^1.0.0
+    dependencies:
+      '@chenwei02/utils': link:../utils
 
   packages/theme:
     specifiers: {}
@@ -117,11 +120,13 @@ importers:
       '@chenwei02/components': workspace:^1.0.0
       '@chenwei02/element': workspace:^1.0.1
       '@vitejs/plugin-vue': ^4.0.0
+      qy-element: workspace:^1.0.1
       vite: ^4.1.4
       vue: ^3.2.47
     dependencies:
       '@chenwei02/components': link:../packages/components
       '@chenwei02/element': link:../packages/chenwei02
+      qy-element: link:../dist/chenwei02
       vue: 3.2.47
     devDependencies:
       '@vitejs/plugin-vue': 4.2.1_vite@4.3.5+vue@3.2.47
@@ -131,11 +136,13 @@ importers:
     specifiers:
       '@algolia/client-search': ^4.16.0
       '@chenwei02/element': workspace:^1.0.1
+      qy-element: workspace:^1.0.1
       vitepress: 1.0.0-alpha.64
       vue: ^3.2.47
     dependencies:
       '@algolia/client-search': 4.17.0
       '@chenwei02/element': link:../packages/chenwei02
+      qy-element: link:../dist/chenwei02
       vue: 3.2.47
     devDependencies:
       vitepress: 1.0.0-alpha.64_rurrd674gzxmsn4o6mrapg6sje
@@ -1137,12 +1144,12 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /@ts-morph/common/0.13.0:
-    resolution: {integrity: sha512-fEJ6j7Cu8yiWjA4UmybOBH9Efgb/64ZTWuvCF4KysGu4xz8ettfyaqFt8WZ1btCxXsGZJjZ2/3svOF6rL+UFdQ==}
+  /@ts-morph/common/0.19.0:
+    resolution: {integrity: sha512-Unz/WHmd4pGax91rdIKWi51wnVUW11QttMEPpBiBgIewnc9UQIX7UDLxr5vRlqeByXCwhkF6VabSsI0raWcyAQ==}
     dependencies:
       fast-glob: 3.2.12
-      minimatch: 5.1.6
-      mkdirp: 1.0.4
+      minimatch: 7.4.6
+      mkdirp: 2.1.6
       path-browserify: 1.0.1
     dev: true
 
@@ -2441,8 +2448,8 @@ packages:
       readable-stream: 2.3.8
     dev: true
 
-  /code-block-writer/11.0.3:
-    resolution: {integrity: sha512-NiujjUFB4SwScJq2bwbYUtXbZhBSlY6vYzm++3Q6oC+U+injTqfPYFK8wS9COOmb2lueqp0ZRB4nK1VYeHgNyw==}
+  /code-block-writer/12.0.0:
+    resolution: {integrity: sha512-q4dMFMlXtKR3XNBHyMHt/3pwYNA69EDk00lloMOaaUMKPUXBw6lpXtbu3MMVG6/uOihGnRDOlkyqsONEUj60+w==}
     dev: true
 
   /code-point-at/1.1.0:
@@ -5038,6 +5045,10 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /kolorist/1.8.0:
+    resolution: {integrity: sha512-Y+60/zizpJ3HRH8DCss+q95yr6145JXZo46OTpFvDZWLfRCE4qChOyk1b26nMaNpfHHgxagk9dXT5OP0Tfe+dQ==}
+    dev: true
+
   /last-run/1.1.1:
     resolution: {integrity: sha512-U/VxvpX4N/rFvPzr3qG5EtLKEnNI0emvIQB3/ecEwv+8GHaUKbIB8vxv1Oai5FAF0d0r7LXHhLLe5K/yChm5GQ==}
     engines: {node: '>= 0.10'}
@@ -5280,6 +5291,13 @@ packages:
       sourcemap-codec: 1.4.8
     dev: true
 
+  /magic-string/0.29.0:
+    resolution: {integrity: sha512-WcfidHrDjMY+eLjlU+8OvwREqHwpgCeKVBUpQ3OhYYuvfaYCUgcbuBzappNzZvg/v8onU3oQj+BYpkOJe9Iw4Q==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.15
+    dev: true
+
   /magic-string/0.30.0:
     resolution: {integrity: sha512-LA+31JYDJLs82r2ScLrlz1GjSgu66ZV518eyWT+S8VhyQn/JL0u9MeBOvQMGYiPk1DBiSN9DDMOcXvigJZaViQ==}
     engines: {node: '>=12'}
@@ -5394,8 +5412,8 @@ packages:
       brace-expansion: 1.1.11
     dev: true
 
-  /minimatch/5.1.6:
-    resolution: {integrity: sha512-lKwV/1brpG6mBUFHtb7NUmtABCb2WZZmm2wNiOA5hAb8VdCS4B3dtMWyvcoViccwAW/COERjXLt0zP1zXUN26g==}
+  /minimatch/7.4.6:
+    resolution: {integrity: sha512-sBz8G/YjVniEz6lKPNpKxXwazJe4c19fEfV2GDMX6AjFz+MX9uDWIZW8XreVhkFW3fkIdTv/gxWr/Kks5FFAVw==}
     engines: {node: '>=10'}
     dependencies:
       brace-expansion: 2.0.1
@@ -5422,6 +5440,12 @@ packages:
 
   /mkdirp/1.0.4:
     resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dev: true
+
+  /mkdirp/2.1.6:
+    resolution: {integrity: sha512-+hEnITedc8LAtIP9u3HJDFIdcLV2vXP33sqLLIzkv1Db1zO/1OxbvYf0Y1OC/S/Qo5dxHXepofhmxL02PsKe+A==}
     engines: {node: '>=10'}
     hasBin: true
     dev: true
@@ -7254,11 +7278,11 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: true
 
-  /ts-morph/14.0.0:
-    resolution: {integrity: sha512-tO8YQ1dP41fw8GVmeQAdNsD8roZi1JMqB7YwZrqU856DvmG5/710e41q2XauzTYrygH9XmMryaFeLo+kdCziyA==}
+  /ts-morph/18.0.0:
+    resolution: {integrity: sha512-Kg5u0mk19PIIe4islUI/HWRvm9bC1lHejK4S0oh1zaZ77TMZAEmQC0sHQYiu2RgCQFZKXz1fMVi/7nOOeirznA==}
     dependencies:
-      '@ts-morph/common': 0.13.0
-      code-block-writer: 11.0.3
+      '@ts-morph/common': 0.19.0
+      code-block-writer: 12.0.0
     dev: true
 
   /tslib/1.14.1:
@@ -7661,22 +7685,26 @@ packages:
       replace-ext: 1.0.1
     dev: true
 
-  /vite-plugin-dts/1.4.1_uw3jrwe7f6wzb2eeyny6thwmae:
-    resolution: {integrity: sha512-jo7E4ZeheD2o48oGiI3EygPbej7ZkGFHg3GVTt7Wuo6NgzThLvuzGGuduaFpnhJOGi1piDFsu6oui/wDKIIORQ==}
-    engines: {node: '>=12.0.0'}
+  /vite-plugin-dts/2.3.0_uw3jrwe7f6wzb2eeyny6thwmae:
+    resolution: {integrity: sha512-WbJgGtsStgQhdm3EosYmIdTGbag5YQpZ3HXWUAPCDyoXI5qN6EY0V7NXq0lAmnv9hVQsvh0htbYcg0Or5Db9JQ==}
+    engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
-      vite: '>=2.4.4'
+      vite: '>=2.9.0'
     dependencies:
+      '@babel/parser': 7.21.8
       '@microsoft/api-extractor': 7.34.8_@types+node@18.16.5
+      '@rollup/pluginutils': 5.0.2
       '@rushstack/node-core-library': 3.58.0_@types+node@18.16.5
-      chalk: 4.1.2
       debug: 4.3.4
       fast-glob: 3.2.12
       fs-extra: 10.1.0
-      ts-morph: 14.0.0
+      kolorist: 1.8.0
+      magic-string: 0.29.0
+      ts-morph: 18.0.0
       vite: 4.3.5_5tgvkgc5alnw62aykujfkn2him
     transitivePeerDependencies:
       - '@types/node'
+      - rollup
       - supports-color
     dev: true
 

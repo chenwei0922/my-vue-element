@@ -2,6 +2,11 @@
   "private": true,
   "name": "pnpm-example",
   "description": "",
+  "workspaces": [
+    "packages/*",
+    "play",
+    "site"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node test.ts",
@@ -46,7 +51,7 @@
     "typescript": "^4.9.5",
     "unplugin-vue-define-options": "^1.2.3",
     "vite": "^4.1.4",
-    "vite-plugin-dts": "1.4.1",
+    "vite-plugin-dts": "^2.3.0",
     "vue": "^3.2.47",
     "vue-eslint-parser": "^9.1.0",
     "vue-router": "^4.1.6",

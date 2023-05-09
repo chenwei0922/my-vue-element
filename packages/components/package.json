@@ -4,10 +4,10 @@
   "description": "",
   "main": "src/index.ts",
   "module": "src/index.ts",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vite build"
+    "build": "vite build",
+    "start": "gulp -f gulpfile.ts"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +16,7 @@
     "vue": "^3.2.0"
   },
   "types": "index.d.ts",
-  "dependencies": {}
+  "dependencies": {
+    "@chenwei02/utils": "workspace:^1.0.0"
+  }
 }

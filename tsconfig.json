@@ -5,6 +5,7 @@
     "strict": true,
     "target": "ES2015",
     "suppressImplicitAnyIndexErrors": true,
+    "ignoreDeprecations": "5.0",
     "module": "ESNext",
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -15,9 +16,12 @@
     "isolatedModules": true,
     "noEmit": true,
     "types": [
-      "unplugin-vue-define-options/macros-global",
-      "unplugin-vue-macros/macros-global"
+      "unplugin-vue-define-options/macros-global"
+      // "unplugin-vue-macros/macros-global"
     ]
+    // "paths": {
+    //   "@chenwei02/*": ["packages/*"]
+    // }
   },
   "references": [
     {

@@ -60,9 +60,10 @@ export default defineConfig({
       tsConfigFilePath: '../../tsconfig.json',
       beforeWriteFile(filePath, content) {
         // console.log("file=", filePath, content.includes("@chenwei02/"))
-        content = content.replace(/@chenwei02\//g, 'qy-element/lib/')
+        // content = content.replace(/@chenwei02\//g, "qy-element/lib/")
         // return content
-        return { filePath, content }
+        // return { filePath, content }
+        return false
       }
     }),
     DefineOptions(),
