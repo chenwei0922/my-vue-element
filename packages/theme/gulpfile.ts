@@ -6,12 +6,7 @@ import autoprefixer from 'gulp-autoprefixer'
 // import concat from 'gulp-concat'
 // 压缩css
 // import cleanCSS from 'gulp-clean-css'
-import {
-  delPath,
-  themeDistPath,
-  themeRoot,
-  qyOutput
-} from '@chenwei02/build-utils'
+import { delPath, themeDistPath, themeRoot } from '@chenwei02/build-utils'
 // import sourcemaps from 'gulp-sourcemaps'
 // gulp-uglify 压缩和混淆
 // gulp-rename 插件修改文件的扩展名
@@ -34,14 +29,9 @@ export const cleanCss = () => {
   return delPath(themeDistPath)
 }
 
-// 复制
-export const copyThemeBundle = () => {
-  return src(`${themeDistPath}/**`).pipe(dest(`${qyOutput}/theme`))
-}
-
 // 监听文件变更，重新打包
 export const watchCss = () => {
-  watch(`${themeRoot}/src/*.scss`, series(cleanCss, buildCss, copyThemeBundle))
+  watch(`${themeRoot}/src/*.scss`, series(cleanCss, buildCss))
 }
 
-export default series(cleanCss, buildCss, copyThemeBundle)
+export default series(cleanCss, buildCss)

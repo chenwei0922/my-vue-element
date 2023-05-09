@@ -1,7 +1,13 @@
 import { copyFile, mkdir, cp } from 'fs/promises'
-import { run, pkgRoot, qyOutput, projRoot } from '@chenwei02/build-utils'
+import {
+  run,
+  pkgRoot,
+  qyOutput,
+  projRoot,
+  themeDistPath
+} from '@chenwei02/build-utils'
 import path from 'node:path'
-import { series, TaskFunction } from 'gulp'
+import { dest, series, src, TaskFunction } from 'gulp'
 
 export const withTaskName = <T extends TaskFunction>(name: string, fn: T) =>
   Object.assign(fn, { displayName: name })
@@ -33,6 +39,11 @@ export const copyFiles = () => {
   ])
 }
 
+export const copyThemeBundle = async () => {
+  src(`${themeDistPath}/**`).pipe(dest(`${pkgRoot}/chenwei02/dist/theme`))
+  src(`${themeDistPath}/**`).pipe(dest(`${qyOutput}/theme`))
+}
+
 // 复制样式
 export const copyFullStyle = async () => {
   await mkdir(path.resolve(qyOutput, './dist'), { recursive: true })
@@ -55,7 +66,7 @@ export default series(
   withTaskName('buildTheme', () =>
     run('pnpm run -C ../../packages/theme build')
   ),
+  copyThemeBundle,
   copyFullStyle,
-
   copyFiles
 )
