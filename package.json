@@ -7,7 +7,8 @@
     "dev": "node test.ts",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.md,.json,.vue",
     "lint:fix": "pnpm run lint --fix",
-    "build:chenwei02": "gulp -f packages/components/script/build/index.ts",
+    "build": "pnpm run -C internal/build start",
+    "build:theme": "pnpm run -C packages/theme build",
     "publish:chenwei02": "gulp -f packages/components/script/publish/index.ts",
     "docs:dev": "pnpm --filter site run dev",
     "docs:build": "pnpm --filter site run build",
@@ -16,6 +17,8 @@
   "devDependencies": {
     "@types/gulp": "^4.0.10",
     "@types/gulp-autoprefixer": "^0.0.33",
+    "@types/gulp-clean-css": "^4.3.0",
+    "@types/gulp-concat": "^0.0.33",
     "@types/gulp-sass": "^5.0.0",
     "@types/node": "^18.14.4",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
@@ -29,6 +32,10 @@
     "eslint-plugin-vue": "^9.9.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
@@ -53,6 +60,11 @@
     "pnpm": ">=7"
   },
   "lint-staged": {
-    "*.{vue,js,ts,jsx,tsx,md,json}": "eslint --fix"
+    "*.{vue,js,ts,jsx,tsx,json}": "eslint --fix"
+  },
+  "dependencies": {
+    "@chenwei02/build-utils": "workspace:^1.0.0",
+    "@chenwei02/components": "workspace:^1.0.0",
+    "@chenwei02/utils": "workspace:^1.0.0"
   }
 }

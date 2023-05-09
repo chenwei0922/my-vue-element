@@ -1,21 +1,27 @@
 {
-    "compilerOptions": {
-      "baseUrl": ".",
-      "jsx": "preserve",
-      "strict": true,
-      "target": "ES2015",
-      "suppressImplicitAnyIndexErrors": true,
-      "module": "ESNext",
-      "skipLibCheck": true,
-      "esModuleInterop": true,
-      "moduleResolution": "Node",
-      "lib": ["ESNext", "DOM"],
-      "resolveJsonModule": true,
-      "useDefineForClassFields": true,
-      "isolatedModules": true,
-      "noEmit": true,
-      "types": ["unplugin-vue-define-options/macros-global"]
-    },
-    "references": [{ "path": "./tsconfig.node.json" }]
-  }
-  
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "strict": true,
+    "target": "ES2015",
+    "suppressImplicitAnyIndexErrors": true,
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
+    "lib": ["ESNext", "DOM"],
+    "resolveJsonModule": true,
+    "useDefineForClassFields": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "types": [
+      "unplugin-vue-define-options/macros-global",
+      "unplugin-vue-macros/macros-global"
+    ]
+  },
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}

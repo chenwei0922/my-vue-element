@@ -3,7 +3,9 @@ import App from './app.vue'
 import './main.css'
 
 // 测试挂载全局组件库
-import chenwei02 from '@chenwei02/components'
+// @ts-ignore
+import chenwei02 from '@chenwei02/element'
+import '@chenwei02/element/lib/theme/index.css'
 
 const app = createApp(App)
 app.use(chenwei02)

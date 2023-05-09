@@ -8,6 +8,7 @@ export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd())
   console.log(mode, '=', env)
   console.log('command=', command)
+  console.log('filename=', __filename)
 
   return {
     lintOnSave: true,

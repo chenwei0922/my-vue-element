@@ -1,0 +1,43 @@
+@use './common/var.scss';
+
+.qy-breadcrumb {
+  font-size: var(--qy-font-normal);
+  line-height: 1;
+
+  .qy-breadcrumb__item {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+
+    &:last-child {
+      cursor: text;
+
+      .qy-breadcrumb__separator {
+        display: none;
+      }
+    }
+  }
+
+  .qy-breadcrumb__inner {
+    color: var(--qy-text-sub);
+
+    &.is-link {
+      color: var(--qy-text-main);
+      font-weight: var(--qy-font-weight-medium);
+      font-family: var(--qy-family-medium);
+
+      &:hover {
+        color: var(--qy-text-primary);
+      }
+    }
+  }
+
+  .qy-breadcrumb__separator {
+    margin: 0 10px;
+    color: var(--qy-text-placeholder);
+  }
+}
+.test{
+  font-size: 15px;
+}

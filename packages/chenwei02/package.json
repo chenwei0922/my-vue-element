@@ -18,7 +18,9 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "release-it"
+    "release": "release-it",
+    "build": "vite build",
+    "start": "gulp -f gulpfile.ts"
   },
   "author": "陈十一",
   "description": "Vue3组件库",
@@ -38,5 +40,6 @@
   "bugs": {
     "url": "https://github.com/chenwei0922/my-vue-element/issues"
   },
-  "homepage": "https://github.com/chenwei0922/my-vue-element#readme"
+  "homepage": "https://github.com/chenwei0922/my-vue-element#readme",
+  "dependencies": {}
 }

@@ -46,5 +46,9 @@
 # 打包
 `gulp` `@types/gulp` `gulp-sass` `@types/gulp-sass` `gulp-autoprefixer` `@types/gulp-autoprefixer`
 
+@types/gulp-clean-css: 压缩css
+gulp-clean-css
 
+@types/gulp-rename gulp-rename : 重命名
 
+gulp-concat: 合并

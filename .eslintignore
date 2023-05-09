@@ -6,3 +6,7 @@ dist
 *.ttf
 .vscode
 node_modules
+pnpm-lock.yaml
+!.*
+packages/chenwei02/dist
+packages/theme/dist

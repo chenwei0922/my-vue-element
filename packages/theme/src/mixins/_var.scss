@@ -1,0 +1,12 @@
+@mixin font-weight-normal {
+  font-weight: var(--qy-font-weight-normal);
+  font-family: var(--qy-family-normal);
+}
+@mixin font-weight-medium {
+  font-weight: var(--qy-font-weight-medium);
+  font-family: var(--qy-family-medium);
+}
+@mixin font-weight-bold {
+  font-weight: var(--qy-font-weight-bold);
+  font-family: var(--qy-family-bold);
+}

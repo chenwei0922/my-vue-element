@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "vite"
   },
@@ -15,6 +16,7 @@
   },
   "dependencies": {
     "@chenwei02/components": "workspace:^1.0.0",
+    "@chenwei02/element": "workspace:^1.0.1",
     "vue": "^3.2.47"
   }
 }

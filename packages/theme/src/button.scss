@@ -1,0 +1,157 @@
+@use './common/var.scss';
+
+.qy-button {
+  --qy-button-primary: var(--qy-primary);
+  --qy-button-weak: rgba(245, 245, 245, 1);
+  --qy-button-blue: #1a90ff;
+  --qy-button-gray: var(--qy-color-gray);
+  --qy-button-success: var(--qy-color-success);
+  --qy-button-danger: var(--qy-color-danger);
+  --qy-button-warn: var(--qy-color-warn);
+  --qy-button-info: var(--qy-color-info);
+
+  line-height: 36px;
+  height: 36px;
+  min-width: 60px;
+  border-radius: 6px;
+  border: none;
+  font-size: var(--qy-font-normal);
+  text-align: center;
+  padding: 0 16px;
+  color: #ffffff;
+  font-family: var(--qy-family-normal);
+  cursor: pointer;
+  margin-right: 8px;
+  display: inline-block;
+
+  &.qy-button--small {
+    font-size: var(--qy-font-small);
+  }
+
+  &.qy-button--default {
+    font-size: var(--qy-font-normal);
+  }
+
+  &.qy-button--large {
+    font-size: var(--qy-font-medium);
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:focus {
+    color: #ffffff;
+  }
+
+  &:hover:not(.disabled) {
+    opacity: 0.8;
+  }
+
+  &.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  &.success {
+    background-color: var(--qy-button-success);
+    color: #ffffff;
+  }
+
+  &.danger {
+    background-color: var(--qy-button-danger);
+    color: #ffffff;
+  }
+
+  &.info {
+    background-color: var(--qy-button-info);
+    color: #ffffff;
+  }
+
+  &.warn {
+    background-color: var(--qy-button-warn);
+    color: #ffffff;
+  }
+
+  &.primary {
+    background-color: var(--qy-button-primary);
+    color: #ffffff;
+  }
+
+  &.blue {
+    background-color: var(--qy-button-blue);
+    color: var(--qy-color-white);
+  }
+
+  &.gray {
+    background-color: var(--qy-button-gray);
+    color: var(--qy-color-white);
+  }
+
+  &.weak {
+    background-color: var(--qy-button-weak);
+    color: #666666;
+
+    &:hover {
+      color: #666666;
+    }
+  }
+
+  &.default {
+    background-color: transparent;
+    border: solid 1px var(--qy-divider);
+    color: #666666;
+
+    &:hover {
+      background-color: var(--qy-button-primary);
+    }
+  }
+
+  //纯文字按钮
+  &.text {
+    padding: 0;
+    height: initial;
+    line-height: initial;
+    min-width: auto;
+    background-color: transparent;
+
+    &.primary {
+      color: var(--qy-button-primary);
+    }
+
+    &.success {
+      color: var(--qy-button-success);
+    }
+
+    &.danger {
+      color: var(--qy-button-danger);
+    }
+
+    &.warn {
+      color: var(--qy-button-warn);
+    }
+
+    &.info {
+      color: var(--qy-button-info);
+    }
+  }
+
+  &.icon {
+    padding: 0;
+    height: initial;
+    line-height: initial;
+    min-width: auto;
+    background-color: transparent;
+  }
+
+  &.dialog {
+    min-width: 88px;
+    font-family: var(--qy-family-medium);
+    font-weight: 500;
+    margin-right: 12px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

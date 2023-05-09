@@ -9,7 +9,11 @@ module.exports = defineConfig({
     browser: true,
     // nodejs全局变量
     node: true,
-    es6: true
+    es6: true,
+    'vue/setup-compiler-macros': true
+  },
+  globals: {
+    defineOptions: 'readonly'
   },
   // 解析器
   parser: 'vue-eslint-parser',
@@ -53,6 +57,35 @@ module.exports = defineConfig({
         bracketSameLine: false
       }
     ],
+
+    // js/ts
+    camelcase: ['error', { properties: 'never' }],
+    'no-console': 'off',
+    'no-debugger': 'warn',
+    'no-constant-condition': ['error', { checkLoops: false }],
+    'no-restricted-syntax': ['error', 'LabeledStatement', 'WithStatement'],
+    'no-return-await': 'error',
+    'no-var': 'error',
+    'no-empty': ['error', { allowEmptyCatch: true }],
+    'prefer-const': [
+      'warn',
+      { destructuring: 'all', ignoreReadBeforeAssign: true }
+    ],
+    'prefer-arrow-callback': [
+      'error',
+      { allowNamedFunctions: false, allowUnboundThis: true }
+    ],
+    'object-shorthand': [
+      'error',
+      'always',
+      { ignoreConstructors: false, avoidQuotes: true }
+    ],
+    'prefer-rest-params': 'error',
+    'prefer-spread': 'error',
+    'prefer-template': 'error',
+
+    'no-redeclare': 'off',
+    '@typescript-eslint/no-redeclare': 'error',
 
     // ts
     // 需要导出函数和类的公共类方法的显示返回和参数类型
