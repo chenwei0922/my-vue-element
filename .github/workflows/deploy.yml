@@ -30,10 +30,14 @@ jobs:
         run: pnpm install --no-frozen-lockfile
       
       - run: pnpm install
-      # #安装依赖
+
+      - name: Build Modules
+        run: pnpm run build
+
+      # 安装文档所需依赖
+      - name: Install Site Dependencies 
       - run: pnpm --filter site install
       
-      - run: pnpm run build:chenwei02 
       #打包Docs
       - name: Build Docs
         run: pnpm run docs:build
