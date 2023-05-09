@@ -1,4 +1,5 @@
 import { copyFile, mkdir, cp } from 'fs/promises'
+import fs from 'fs'
 import {
   run,
   pkgRoot,
@@ -39,6 +40,16 @@ export const copyFiles = async () => {
   ])
 }
 
+export const updatePackage = async () => {
+  const srcPath = path.join(qyOutput, '/package.json')
+  let content = fs.readFileSync(srcPath, 'utf8')
+  const reg = /dist\//gi
+  if (reg.test(content)) {
+    content = content.replace(reg, '')
+    fs.writeFileSync(srcPath, content, 'utf-8')
+  }
+}
+
 export const copyThemeBundle = async () => {
   src(`${themeDistPath}/**`).pipe(dest(`${pkgRoot}/chenwei02/dist/theme`))
   src(`${themeDistPath}/**`).pipe(dest(`${qyOutput}/theme`))
@@ -69,5 +80,6 @@ export default series(
   ),
   copyThemeBundle,
   copyFiles,
-  copyFullStyle
+  copyFullStyle,
+  updatePackage
 )

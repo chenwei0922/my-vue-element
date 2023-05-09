@@ -1,6 +1,6 @@
 {
   "name": "qy-element",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "main": "dist/lib/index.js",
   "module": "dist/es/index.mjs",
   "typings": "dist/lib/index.d.ts",
@@ -52,8 +52,8 @@
     "url": "https://github.com/chenwei0922/qy-element.git"
   },
   "bugs": {
-    "url": "https://github.com/chenwei0922/my-vue-element/issues"
+    "url": "https://github.com/chenwei0922/qy-element/issues"
   },
-  "homepage": "https://github.com/chenwei0922/my-vue-element#readme",
+  "homepage": "https://github.com/chenwei0922/qy-element#readme",
   "dependencies": {}
 }

@@ -119,7 +119,7 @@ importers:
     specifiers:
       '@chenwei02/components': workspace:^1.0.0
       '@vitejs/plugin-vue': ^4.0.0
-      qy-element: workspace:^1.0.1
+      qy-element: workspace:^1.0.0
       vite: ^4.1.4
       vue: ^3.2.47
     dependencies:
@@ -133,7 +133,7 @@ importers:
   site:
     specifiers:
       '@algolia/client-search': ^4.16.0
-      qy-element: workspace:^1.0.1
+      qy-element: workspace:^1.0.0
       vitepress: 1.0.0-alpha.64
       vue: ^3.2.47
     dependencies:
