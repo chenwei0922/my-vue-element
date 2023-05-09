@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as a}from"./chunks/framework.fc63eae0.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"guide/installation.md","lastUpdated":1681721180000}'),n={name:"guide/installation.md"};function o(s,r,i,c,d,l){return a(),e("div")}const m=t(n,[["render",o]]);export{_ as __pageData,m as default};
