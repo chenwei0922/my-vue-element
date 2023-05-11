@@ -9,36 +9,36 @@ on:
 
 # 要执行的任务
 jobs:
-  dependencies:
-    # name: dependencies 任务的说明
-    name: Install dependencies
-    # 指定运行所需的虚拟机环境，必填
-    runs-on: ubuntu-latest #使用Ubuntu系统镜像运行自动化脚本
-    # job 用于指定每个job的运行步骤，包含一个或多个。
-    # 每个步骤都可指定三个字段：name步骤名字、run运行的命令或者action、env所需的环境变量
-    steps: #自动化步骤
-      # 下载源码，这一步就是检出您的仓库并下载里面的代码到runner中，actions/checkout@v2是官方自己造的轮子，直接拿来用就行
-      - name: Checkout
-        uses: actions/checkout@v2
+  # dependencies:
+  #   # name: dependencies 任务的说明
+  #   name: Install dependencies
+  #   # 指定运行所需的虚拟机环境，必填
+  #   runs-on: ubuntu-latest #使用Ubuntu系统镜像运行自动化脚本
+  #   # job 用于指定每个job的运行步骤，包含一个或多个。
+  #   # 每个步骤都可指定三个字段：name步骤名字、run运行的命令或者action、env所需的环境变量
+  #   steps: #自动化步骤
+  #     # 下载源码，这一步就是检出您的仓库并下载里面的代码到runner中，actions/checkout@v2是官方自己造的轮子，直接拿来用就行
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
 
-      #使用pnpm
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7.28.0
+  #     #使用pnpm
+  #     - name: Setup pnpm
+  #       uses: pnpm/action-setup@v2
+  #       with:
+  #         version: 7.28.0
       
-      # 使用node版本
-      - name: Setup node
-        uses: actions/setup-node@master
-        with:
-          node-version: ${{ matrix.node-version }}
-          registry-url: 'https://registry.npmjs.org'
+  #     # 使用node版本
+  #     - name: Setup node
+  #       uses: actions/setup-node@master
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
+  #         registry-url: 'https://registry.npmjs.org'
   
-      - name: Install dependencies
-        run: pnpm install --filter=!site --no-frozen-lockfile
+  #     - name: Install dependencies
+  #       run: pnpm install --filter=!site --no-frozen-lockfile
       
-      - name: Build Modules
-        run: pnpm run build
+  #     - name: Build Modules
+  #       run: pnpm run build
 
   # deploy:
   #   needs: dependencies
@@ -91,7 +91,7 @@ jobs:
   #         NODE_AUTH_TOKEN: ${{ secrets.DEPLOY_SECRET }}
 
   publish:
-    needs: dependencies
+    # needs: dependencies
     name: Publish Package
     runs-on: ubuntu-latest
     steps:
@@ -105,7 +105,6 @@ jobs:
           version: 7.28.0
       - run: pnpm install
       - run: pnpm run build
-      - run: npm ci
       - run: npm publish ./dist/chenwei02/ --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.DEPLOY_SECRET }}
