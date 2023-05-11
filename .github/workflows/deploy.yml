@@ -46,6 +46,12 @@ jobs:
     name: Deploy Docs
     runs-on: ubuntu-latest
     steps:
+      #使用pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7.28.0
+
       # 安装文档所需依赖
       - name: Install Docs Dependencies
         run: pnpm --filter site install
