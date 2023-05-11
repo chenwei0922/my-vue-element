@@ -14,7 +14,7 @@
     "lint:fix": "pnpm run lint --fix",
     "build": "pnpm run -C internal/build start",
     "build:theme": "pnpm run -C packages/theme build",
-    "publish": "pnpm run -C internal/build release",
+    "release": "pnpm run -C internal/build release",
     "docs:dev": "pnpm --filter site run dev",
     "docs:build": "pnpm --filter site run build",
     "prepare": "husky install"

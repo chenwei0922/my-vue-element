@@ -2,7 +2,9 @@
 layout: doc
 ---
 
-## Button 按钮
+# Button 按钮
+
+## 基础用法
 <qy-button>默认按钮</qy-button>
 <qy-button type="primary">默认按钮</qy-button>
 

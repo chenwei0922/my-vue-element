@@ -62,9 +62,15 @@ export default defineConfig({
         console.log('file=', filePath, content.includes('@chenwei02/'))
         if (content.includes('@chenwei02/')) {
           if (/\/lib\//g.test(filePath)) {
-            content = content.replace(/@chenwei02\//g, 'qy-element/lib/')
+            content = content.replace(
+              /@chenwei02\//g,
+              '@chenwei02/qy-element/lib/'
+            )
           } else if (/\/es\//g.test(filePath)) {
-            content = content.replace(/@chenwei02\//g, 'qy-element/es/')
+            content = content.replace(
+              /@chenwei02\//g,
+              '@chenwei02/qy-element/es/'
+            )
           }
           // return content
           return { filePath, content }

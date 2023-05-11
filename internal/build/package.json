@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp -f gulpfile.ts",
-    "clean": "rm -rf dist/"
+    "clean": "rm -rf dist/",
+    "release": "gulp -f publish.ts"
   },
   "keywords": [],
   "author": "",
