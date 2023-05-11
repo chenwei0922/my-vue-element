@@ -26,6 +26,8 @@ jobs:
   #       uses: pnpm/action-setup@v2
   #       with:
   #         version: 7.28.0
+  #         cache: 'pnpm'
+  #         cache-dependency-path: subdir/pnpm-lock.yaml
       
   #     # 使用node版本
   #     - name: Setup node
@@ -33,6 +35,7 @@ jobs:
   #       with:
   #         node-version: ${{ matrix.node-version }}
   #         registry-url: 'https://registry.npmjs.org'
+  #         cache: 'npm'
   
   #     - name: Install dependencies
   #       run: pnpm install --filter=!site --no-frozen-lockfile
@@ -40,55 +43,49 @@ jobs:
   #     - name: Build Modules
   #       run: pnpm run build
 
-  # deploy:
-  #   needs: dependencies
-  #   name: Deploy Docs
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
+  deploy:
+    # needs: dependencies
+    name: Deploy Docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
-  #     #使用pnpm
-  #     - name: Setup pnpm
-  #       uses: pnpm/action-setup@v2
-  #       with:
-  #         version: 7.28.0
+      #使用pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7.28.0
       
-  #     - name: Setup node
-  #       uses: actions/setup-node@master
-  #       with:
-  #         node-version: ${{ matrix.node-version }}
-  #         registry-url: 'https://registry.npmjs.org'
+      - name: Setup node
+        uses: actions/setup-node@master
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
 
-  #     - name: Install dependencies
-  #       run: pnpm install --filter=!site --no-frozen-lockfile
+      - name: Install dependencies
+        run: pnpm install --filter=!site --no-frozen-lockfile
       
-  #     - name: Build Modules
-  #       run: pnpm run build
+      - name: Build Modules
+        run: pnpm run build
 
-  #     # 安装文档所需依赖
-  #     - name: Install Docs Dependencies
-  #       run: pnpm --filter site install
-  #     #打包Docs
-  #     - name: Build Docs
-  #       run: pnpm -w run docs:build
+      # 安装文档所需依赖
+      - name: Install Docs Dependencies
+        run: pnpm --filter site install
+      #打包Docs
+      - name: Build Docs
+        run: pnpm -w run docs:build
       
-  #     # 部署到github pages
-  #     - name: Deploy Docs
-  #       uses: peaceiris/actions-gh-pages@v3 # 使用部署到 GitHub pages 的 action
-  #       with:
-  #         publish_dir: ./site/docs/.vitepress/dist # 部署打包后的 dist 目录
-  #         github_token: ${{ secrets.DEPLOY_SECRET }} # secret 名
-  #         user_name: ${{ secrets.MY_USER_NAME }}
-  #         user_email: ${{ secrets.MY_USER_EMAIL }}
-  #         commit_message: 自动部署 # 部署时的 git 提交信息，自由填写
-  #       # run: pnpm run deploy -F site
-
-  #     # 发布
-  #     - name: Publish Package
-  #       run: npm publish ./dist/chenwei02/
-  #       env:
-  #         NODE_AUTH_TOKEN: ${{ secrets.DEPLOY_SECRET }}
+      # 部署到github pages
+      - name: Deploy Docs
+        uses: peaceiris/actions-gh-pages@v3 # 使用部署到 GitHub pages 的 action
+        with:
+          publish_dir: ./site/docs/.vitepress/dist # 部署打包后的 dist 目录
+          github_token: ${{ secrets.DEPLOY_SECRET }} # secret 名
+          user_name: ${{ secrets.MY_USER_NAME }}
+          user_email: ${{ secrets.MY_USER_EMAIL }}
+          commit_message: 自动部署 # 部署时的 git 提交信息，自由填写
+        # run: pnpm run deploy -F site
 
   publish:
     # needs: dependencies
