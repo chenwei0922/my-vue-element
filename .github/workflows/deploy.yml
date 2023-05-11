@@ -59,6 +59,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Install dependencies
+        run: pnpm install --filter=!site --no-frozen-lockfile
+      
+      - name: Build Modules
+        run: pnpm run build
+
       # 安装文档所需依赖
       - name: Install Docs Dependencies
         run: pnpm --filter site install
