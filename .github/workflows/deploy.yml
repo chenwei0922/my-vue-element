@@ -27,8 +27,6 @@ jobs:
         with:
           version: 7.28.0
       
-    - run: npx pnpm install --global pnpm
-
       # 使用node版本
       - name: Setup node
         uses: actions/setup-node@master
@@ -36,6 +34,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://registry.npmjs.org'
           cache: 'pnpm'
+      
+      - run: npx pnpm install --global pnpm
   
       - name: Install dependencies
         run: pnpm install --filter=!site --no-frozen-lockfile
