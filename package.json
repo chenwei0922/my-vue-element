@@ -15,6 +15,7 @@
     "build": "pnpm run -C internal/build start",
     "build:theme": "pnpm run -C packages/theme build",
     "release": "pnpm run -C internal/build release",
+    "gen:tag": "pnpm run -C internal/build gen:tag",
     "docs:dev": "pnpm --filter site run dev",
     "docs:build": "pnpm --filter site run build",
     "prepare": "husky install"

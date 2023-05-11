@@ -86,7 +86,7 @@ jobs:
 
       # 发布
       - name: Publish Package
-        run: npm publish -C ./dist/chenwei02/
+        run: npm publish ./dist/chenwei02/
         env:
           NODE_AUTH_TOKEN: ${{ secrets.DEPLOY_SECRET }}
 
