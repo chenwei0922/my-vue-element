@@ -33,9 +33,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://registry.npmjs.org'
-          cache: 'pnpm'
-      
-      - run: npx pnpm install --global pnpm
   
       - name: Install dependencies
         run: pnpm install --filter=!site --no-frozen-lockfile
@@ -59,7 +56,7 @@ jobs:
         run: pnpm --filter site install
       #打包Docs
       - name: Build Docs
-        run: pnpm run docs:build
+        run: pnpm -w run docs:build
       
       # 部署到github pages
       - name: Deploy Docs
