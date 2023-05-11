@@ -99,13 +99,15 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: ${{ matrix.node-version }}
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: 'https://registry.npmjs.org/'
       - uses: pnpm/action-setup@v2
         with:
           version: 7.28.0
       - run: pnpm install
       - run: pnpm run build
-      - name: Publish QyElement
-        run: npm publish ./dist/chenwei02/ --access public
+      - run: npm ci
+      - run: npm publish ./dist/chenwei02/ --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.DEPLOY_SECRET }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          token: ${{ secrets.NPM_TOKEN }}
