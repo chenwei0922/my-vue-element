@@ -41,7 +41,7 @@ jobs:
   #       run: pnpm run build
 
   deploy:
-    needs: dependencies
+    # needs: dependencies
     name: Deploy Docs
     runs-on: ubuntu-latest
     steps:
