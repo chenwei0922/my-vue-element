@@ -107,3 +107,4 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           token: ${{ secrets.NPM_TOKEN }}
+      - run: pnpm run gen:tag
