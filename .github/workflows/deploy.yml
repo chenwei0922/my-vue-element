@@ -41,8 +41,8 @@ jobs:
         run: pnpm run build
 
   deploy docs:
-    name: Deploy Docs
     needs: dependencies
+    name: Deploy Docs
     steps:
       # 安装文档所需依赖
       - name: Install Docs Dependencies
@@ -63,8 +63,8 @@ jobs:
         # run: pnpm run deploy -F site
 
   publish lib:
-    name: Publish Package
     needs: dependencies
+    name: Publish Package
     steps:
       - run: npm ci
       - name: Publish QyElement
