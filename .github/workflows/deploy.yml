@@ -88,7 +88,6 @@ jobs:
     name: Publish Package
     runs-on: ubuntu-latest
     steps:
-      - run: npm ci
       - name: Publish QyElement
         run: npm publish
         env:
