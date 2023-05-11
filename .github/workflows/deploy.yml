@@ -21,18 +21,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # 使用node版本
-      - name: Setup node
-        uses: actions/setup-node@master
-        with:
-          node-version: ${{ matrix.node }}
-          registry-url: 'https://registry.npmjs.org'
-      
       #使用pnpm
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 7.28.0
+
+      # 使用node版本
+      - name: Setup node
+        uses: actions/setup-node@master
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'pnpm'
   
       - name: Install dependencies
         run: pnpm install --filter=!site --no-frozen-lockfile
@@ -45,10 +46,6 @@ jobs:
     name: Deploy Docs
     runs-on: ubuntu-latest
     steps:
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7.28.0
       # 安装文档所需依赖
       - name: Install Docs Dependencies
         run: pnpm --filter site install

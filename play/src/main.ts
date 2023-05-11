@@ -7,8 +7,8 @@ import './main.css'
 // import chenwei02 from '@chenwei02/element'
 // import '@chenwei02/element/lib/theme/index.css'
 
-import chenwei02 from 'qy-element'
-import 'qy-element/theme/index.css'
+import chenwei02 from '@chenwei02/qy-element'
+import '@chenwei02/qy-element/theme/index.css'
 
 const app = createApp(App)
 app.use(chenwei02)
