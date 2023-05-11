@@ -43,6 +43,7 @@ jobs:
   deploy docs:
     needs: dependencies
     name: Deploy Docs
+    runs-on: ubuntu-latest
     steps:
       # 安装文档所需依赖
       - name: Install Docs Dependencies
@@ -65,6 +66,7 @@ jobs:
   publish lib:
     needs: dependencies
     name: Publish Package
+    runs-on: ubuntu-latest
     steps:
       - run: npm ci
       - name: Publish QyElement
