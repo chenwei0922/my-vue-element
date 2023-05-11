@@ -9,42 +9,15 @@ on:
 
 # 要执行的任务
 jobs:
-  # dependencies:
-  #   # name: dependencies 任务的说明
-  #   name: Install dependencies
-  #   # 指定运行所需的虚拟机环境，必填
-  #   runs-on: ubuntu-latest #使用Ubuntu系统镜像运行自动化脚本
-  #   # job 用于指定每个job的运行步骤，包含一个或多个。
-  #   # 每个步骤都可指定三个字段：name步骤名字、run运行的命令或者action、env所需的环境变量
-  #   steps: #自动化步骤
-  #     # 下载源码，这一步就是检出您的仓库并下载里面的代码到runner中，actions/checkout@v2是官方自己造的轮子，直接拿来用就行
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-
-  #     #使用pnpm
-  #     - name: Setup pnpm
-  #       uses: pnpm/action-setup@v2
-  #       with:
-  #         version: 7.28.0
-      
-  #     # 使用node版本
-  #     - name: Setup node
-  #       uses: actions/setup-node@master
-  #       with:
-  #         node-version: ${{ matrix.node-version }}
-  #         registry-url: 'https://registry.npmjs.org'
-  
-  #     - name: Install dependencies
-  #       run: pnpm install --filter=!site --no-frozen-lockfile
-      
-  #     - name: Build Modules
-  #       run: pnpm run build
-
-  deploy:
-    # needs: dependencies
-    name: Deploy Docs
-    runs-on: ubuntu-latest
-    steps:
+  dependencies:
+    # name: dependencies 任务的说明
+    name: Install dependencies
+    # 指定运行所需的虚拟机环境，必填
+    runs-on: ubuntu-latest #使用Ubuntu系统镜像运行自动化脚本
+    # job 用于指定每个job的运行步骤，包含一个或多个。
+    # 每个步骤都可指定三个字段：name步骤名字、run运行的命令或者action、env所需的环境变量
+    steps: #自动化步骤
+      # 下载源码，这一步就是检出您的仓库并下载里面的代码到runner中，actions/checkout@v2是官方自己造的轮子，直接拿来用就行
       - name: Checkout
         uses: actions/checkout@v2
 
@@ -54,48 +27,75 @@ jobs:
         with:
           version: 7.28.0
       
+      # 使用node版本
       - name: Setup node
         uses: actions/setup-node@master
         with:
           node-version: ${{ matrix.node-version }}
-          registry-url: 'http://registry.npmjs.org'
-
+          registry-url: 'https://registry.npmjs.org'
+  
       - name: Install dependencies
         run: pnpm install --filter=!site --no-frozen-lockfile
       
       - name: Build Modules
         run: pnpm run build
 
-      # 安装文档所需依赖
-      - name: Install Docs Dependencies
-        run: pnpm --filter site install
-      #打包Docs
-      - name: Build Docs
-        run: pnpm -w run docs:build
-      
-      # 部署到github pages
-      - name: Deploy Docs
-        uses: peaceiris/actions-gh-pages@v3 # 使用部署到 GitHub pages 的 action
-        with:
-          publish_dir: ./site/docs/.vitepress/dist # 部署打包后的 dist 目录
-          github_token: ${{ secrets.DEPLOY_SECRET }} # secret 名
-          user_name: ${{ secrets.MY_USER_NAME }}
-          user_email: ${{ secrets.MY_USER_EMAIL }}
-          commit_message: 自动部署 # 部署时的 git 提交信息，自由填写
-        # run: pnpm run deploy -F site
+  # deploy:
+  #   needs: dependencies
+  #   name: Deploy Docs
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
 
-      # 发布
-      - name: Publish Package
+  #     #使用pnpm
+  #     - name: Setup pnpm
+  #       uses: pnpm/action-setup@v2
+  #       with:
+  #         version: 7.28.0
+      
+  #     - name: Setup node
+  #       uses: actions/setup-node@master
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
+  #         registry-url: 'https://registry.npmjs.org'
+
+  #     - name: Install dependencies
+  #       run: pnpm install --filter=!site --no-frozen-lockfile
+      
+  #     - name: Build Modules
+  #       run: pnpm run build
+
+  #     # 安装文档所需依赖
+  #     - name: Install Docs Dependencies
+  #       run: pnpm --filter site install
+  #     #打包Docs
+  #     - name: Build Docs
+  #       run: pnpm -w run docs:build
+      
+  #     # 部署到github pages
+  #     - name: Deploy Docs
+  #       uses: peaceiris/actions-gh-pages@v3 # 使用部署到 GitHub pages 的 action
+  #       with:
+  #         publish_dir: ./site/docs/.vitepress/dist # 部署打包后的 dist 目录
+  #         github_token: ${{ secrets.DEPLOY_SECRET }} # secret 名
+  #         user_name: ${{ secrets.MY_USER_NAME }}
+  #         user_email: ${{ secrets.MY_USER_EMAIL }}
+  #         commit_message: 自动部署 # 部署时的 git 提交信息，自由填写
+  #       # run: pnpm run deploy -F site
+
+  #     # 发布
+  #     - name: Publish Package
+  #       run: npm publish ./dist/chenwei02/
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{ secrets.DEPLOY_SECRET }}
+
+  publish:
+    needs: dependencies
+    name: Publish Package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish QyElement
         run: npm publish ./dist/chenwei02/
         env:
           NODE_AUTH_TOKEN: ${{ secrets.DEPLOY_SECRET }}
-
-  # publish:
-  #   needs: dependencies
-  #   name: Publish Package
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Publish QyElement
-  #       run: npm publish
-  #       env:
-  #         NODE_AUTH_TOKEN: ${{ secrets.DEPLOY_SECRET }}
