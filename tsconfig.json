@@ -16,6 +16,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "types": [
+      "node",
       "unplugin-vue-define-options/macros-global"
       // "unplugin-vue-macros/macros-global"
     ]
