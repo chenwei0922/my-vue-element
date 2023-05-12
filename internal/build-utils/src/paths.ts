@@ -9,6 +9,8 @@ export const buildOutput = path.resolve(projRoot, './dist')
 export const qyOutput = path.resolve(buildOutput, './chenwei02')
 // /packages 目录
 export const pkgRoot = path.resolve(projRoot, './packages')
+// chenwei02根目录
+export const qyRoot = path.resolve(pkgRoot, './chenwei02')
 // 组件库根目录
 export const compRoot = path.resolve(pkgRoot, './components')
 // them根目录

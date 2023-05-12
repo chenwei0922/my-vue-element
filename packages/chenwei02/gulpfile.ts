@@ -1,5 +1,5 @@
 import { run, pkgRoot, compRoot } from '@chenwei02/build-utils'
-import { series, parallel, src, dest } from 'gulp'
+import { series, parallel, src, dest, watch } from 'gulp'
 import dartSass from 'sass'
 import gulpSass from 'gulp-sass'
 import autoprefixer from 'gulp-autoprefixer'
@@ -25,6 +25,17 @@ export const buildStyle = () => {
 // 打包组件
 export const buildComponent = () => {
   return run('pnpm run build')
+}
+
+// 监听文件变更，重新打包
+export const watchModules = () => {
+  watch(
+    `${compRoot}/src/*`,
+    series(async () => {
+      run(`rm -rf dist/lib/**`)
+      run(`rm -rf dist/es/**`)
+    }, parallel(buildStyle, buildComponent))
+  )
 }
 
 export default series(cleanComponent, parallel(buildStyle, buildComponent))

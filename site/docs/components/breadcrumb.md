@@ -10,12 +10,15 @@ const test = () => {
   alert('点了first page 路由')
 }
 </script>
-<qy-breadcrumb class="breadcrumb-view" separator="/">
-  <qy-breadcrumb-item to="#" :custom-event="test">{{ "first page" }}</qy-breadcrumb-item>
-  <qy-breadcrumb-item>{{ 'second page' }}</qy-breadcrumb-item>
-</qy-breadcrumb>
+<qy-element-wrap>
+  <qy-breadcrumb class="breadcrumb-view" separator="/">
+    <qy-breadcrumb-item to="#" :custom-event="test">{{ "first page" }}</qy-breadcrumb-item>
+    <qy-breadcrumb-item>{{ 'second page' }}</qy-breadcrumb-item>
+  </qy-breadcrumb>
+</qy-element-wrap>
 
-```html
+::: details 查看源码
+```vue
 <script setup>
 const test = () => {
   alert('点了first page 路由')
@@ -28,6 +31,7 @@ const test = () => {
 </qy-breadcrumb>
 </template>
 ```
+:::
 
 ## Breadcrumb API
 

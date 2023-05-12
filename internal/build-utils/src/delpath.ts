@@ -1,5 +1,5 @@
 import fs from 'fs'
-import nodePath from 'node:path'
+import nodePath from 'path'
 
 import { pkgRoot } from './paths'
 
