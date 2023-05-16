@@ -9,6 +9,8 @@
 `sideEffects` 忽略tree shaking带来的副作用。比如打包后的代码包含`import "./xxx.css"`
 `typings` 声明文件入口
 
+//限制使用包管理器pnpm
+"preinstall": "npx -y only-allow pnpm"
 # pnpm
 `pnpm add vue --save-peer -w`
 

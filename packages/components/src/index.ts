@@ -1,2 +1,5 @@
+import 'virtual:svg-icons-register'
 export * from './button'
 export * from './breadcrumb'
+export * from './input'
+export * from './icon'

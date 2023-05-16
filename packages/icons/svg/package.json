@@ -1,0 +1,19 @@
+{
+	"name": "@chenwei02/icons-svg",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"optimize": "svgo -f . -o ."
+	},
+	"files": [
+		"*.svg"
+	],
+	"keywords": [],
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"svgo": "^3.0.2"
+	}
+}

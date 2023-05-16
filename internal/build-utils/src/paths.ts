@@ -16,3 +16,6 @@ export const compRoot = path.resolve(pkgRoot, './components')
 // them根目录
 export const themeRoot = path.resolve(pkgRoot, './theme')
 export const themeDistPath = path.resolve(themeRoot, './dist')
+
+// doc目录
+export const docRoot = path.resolve(projRoot, './site/docs')

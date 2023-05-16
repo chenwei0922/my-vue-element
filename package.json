@@ -1,76 +1,77 @@
 {
-  "private": true,
-  "name": "pnpm-example",
-  "description": "",
-  "workspaces": [
-    "packages/*",
-    "play",
-    "site"
-  ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node test.ts",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.md,.json,.vue",
-    "lint:fix": "pnpm run lint --fix",
-    "build": "pnpm run -C internal/build start",
-    "build:theme": "pnpm run -C packages/theme build",
-    "release": "pnpm run -C internal/build release",
-    "gen:tag": "pnpm run -C internal/build gen:tag",
-    "docs:dev": "pnpm --filter site run dev",
-    "docs:build": "pnpm --filter site run build",
-    "prepare": "husky install"
-  },
-  "devDependencies": {
-    "@types/gulp": "^4.0.10",
-    "@types/gulp-autoprefixer": "^0.0.33",
-    "@types/gulp-clean-css": "^4.3.0",
-    "@types/gulp-concat": "^0.0.33",
-    "@types/gulp-sass": "^5.0.0",
-    "@types/node": "^18.14.4",
-    "@typescript-eslint/eslint-plugin": "^5.54.0",
-    "@typescript-eslint/parser": "^5.54.0",
-    "@vitejs/plugin-vue": "^4.0.0",
-    "@vue/runtime-core": "^3.2.47",
-    "eslint": "^8.35.0",
-    "eslint-config-prettier": "^8.7.0",
-    "eslint-define-config": "^1.15.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^9.9.0",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-clean": "^0.4.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.1.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.2.0",
-    "prettier": "^2.8.4",
-    "release-it": "^15.9.3",
-    "sass": "^1.58.3",
-    "sucrase": "^3.31.0",
-    "typescript": "^4.9.5",
-    "unplugin-vue-define-options": "^1.2.3",
-    "vite": "^4.1.4",
-    "vite-plugin-dts": "^2.3.0",
-    "vue": "^3.2.47",
-    "vue-eslint-parser": "^9.1.0",
-    "vue-router": "^4.1.6",
-    "vue-tsc": "^1.2.0"
-  },
-  "peerDependencies": {
-    "vue": "^3.2.47"
-  },
-  "engines": {
-    "node": ">=16",
-    "pnpm": ">=7"
-  },
-  "lint-staged": {
-    "*.{vue,js,ts,jsx,tsx,json}": "eslint --fix"
-  },
-  "dependencies": {
-    "@chenwei02/build-utils": "workspace:^1.0.0",
-    "@chenwei02/components": "workspace:^1.0.0",
-    "@chenwei02/utils": "workspace:^1.0.0"
-  }
+	"private": true,
+	"name": "pnpm-example",
+	"description": "",
+	"workspaces": [
+		"packages/*",
+		"play",
+		"site"
+	],
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "node test.ts",
+		"lint": "eslint packages internal --ext .js,.jsx,.ts,.tsx,.md,.json,.vue",
+		"lint:fix": "pnpm run lint --fix",
+		"build": "pnpm run -C internal/build start",
+		"build:theme": "pnpm run -C packages/theme build",
+		"release": "pnpm run -C internal/build release",
+		"gen:tag": "pnpm run -C internal/build gen:tag",
+		"docs:dev": "pnpm --filter site run dev",
+		"docs:build": "pnpm --filter site run build",
+		"prepare": "husky install",
+		"preinstall": "npx -y only-allow pnpm"
+	},
+	"devDependencies": {
+		"@types/gulp": "^4.0.10",
+		"@types/gulp-autoprefixer": "^0.0.33",
+		"@types/gulp-clean-css": "^4.3.0",
+		"@types/gulp-concat": "^0.0.33",
+		"@types/gulp-sass": "^5.0.0",
+		"@types/node": "^18.14.4",
+		"@typescript-eslint/eslint-plugin": "^5.54.0",
+		"@typescript-eslint/parser": "^5.54.0",
+		"@vitejs/plugin-vue": "^4.0.0",
+		"@vue/runtime-core": "^3.2.47",
+		"eslint": "^8.35.0",
+		"eslint-config-prettier": "^8.7.0",
+		"eslint-define-config": "^1.15.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-vue": "^9.9.0",
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^8.0.0",
+		"gulp-clean": "^0.4.0",
+		"gulp-clean-css": "^4.3.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-rename": "^2.0.0",
+		"gulp-sass": "^5.1.0",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.2.0",
+		"prettier": "^2.8.4",
+		"release-it": "^15.9.3",
+		"sass": "^1.58.3",
+		"sucrase": "^3.31.0",
+		"typescript": "^4.9.5",
+		"unplugin-vue-define-options": "^1.2.3",
+		"vite": "^4.1.4",
+		"vite-plugin-dts": "^2.3.0",
+		"vue": "^3.2.47",
+		"vue-eslint-parser": "^9.1.0",
+		"vue-router": "^4.1.6",
+		"vue-tsc": "^1.2.0"
+	},
+	"peerDependencies": {
+		"vue": "^3.2.47"
+	},
+	"engines": {
+		"node": ">=16",
+		"pnpm": ">=7"
+	},
+	"lint-staged": {
+		"*.{vue,js,ts,jsx,tsx,json}": "eslint --fix"
+	},
+	"dependencies": {
+		"@chenwei02/build-utils": "workspace:^1.0.0",
+		"@chenwei02/components": "workspace:^1.0.0",
+		"@chenwei02/utils": "workspace:^1.0.0"
+	}
 }
