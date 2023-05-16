@@ -30,9 +30,15 @@ const props = defineProps({
 const symbolId = computed(() => `#${props.prefix}-${props.name}`)
 
 const svgStyle = computed(() => {
+	let sty = {}
 	if (typeof props.size === 'number' || !props.size.includes('px')) {
-		return { width: `${props.size}px`, height: `${props.size}px` }
+		sty = { width: `${props.size}px`, height: `${props.size}px` }
+	} else {
+		sty = { width: props.size, height: props.size }
 	}
-	return { width: props.size, height: props.size }
+	if (props.color) {
+		sty = { ...sty, color: props.color }
+	}
+	return sty
 })
 </script>

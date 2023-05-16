@@ -61,6 +61,25 @@ input/textarea-autosize
 
 :::
 
+## 输入长度限制
+
+> 通过 `maxlength` 限制输入的最大长度，`minlength` 限制输入的最小长度。`show-word-limit` 显示剩余字符数。
+
+::: demo
+
+input/length
+
+:::
+
+## 带图标的输入框
+
+> 要在输入框中添加图标，可以给 `prefix-icon` 和 `suffix-icon` 属性设置一个图标名称。或者是使用 `prefixIcon` 和 `suffixIcon` 命名的插槽。
+
+::: demo
+
+input/icon
+
+:::
 <!-- ::: tip
 This is a tip
 :::
