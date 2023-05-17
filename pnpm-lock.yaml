@@ -6,6 +6,8 @@ importers:
     specifiers:
       '@chenwei02/build-utils': workspace:^1.0.0
       '@chenwei02/components': workspace:^1.0.0
+      '@chenwei02/hooks': workspace:^1.0.0
+      '@chenwei02/locale': workspace:^1.0.0
       '@chenwei02/utils': workspace:^1.0.0
       '@types/gulp': ^4.0.10
       '@types/gulp-autoprefixer': ^0.0.33
@@ -46,6 +48,8 @@ importers:
     dependencies:
       '@chenwei02/build-utils': link:internal/build-utils
       '@chenwei02/components': link:packages/components
+      '@chenwei02/hooks': link:packages/hooks
+      '@chenwei02/locale': link:packages/locale
       '@chenwei02/utils': link:packages/utils
     devDependencies:
       '@types/gulp': 4.0.10

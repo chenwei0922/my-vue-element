@@ -72,6 +72,8 @@
 	"dependencies": {
 		"@chenwei02/build-utils": "workspace:^1.0.0",
 		"@chenwei02/components": "workspace:^1.0.0",
+		"@chenwei02/hooks": "workspace:^1.0.0",
+		"@chenwei02/locale": "workspace:^1.0.0",
 		"@chenwei02/utils": "workspace:^1.0.0"
 	}
 }

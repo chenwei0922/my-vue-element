@@ -90,8 +90,8 @@ onMounted(() => {})
 .demo-show div[class*='language-'] {
 	margin: 0 !important;
 }
-.demo-show [class*='language-'] >>> pre,
-.demo-show [class*='language-'] >>> code {
+.demo-show [class*='language-'] :deep(pre),
+.demo-show [class*='language-'] :deep(code) {
 	tab-size: 2 !important;
 }
 </style>

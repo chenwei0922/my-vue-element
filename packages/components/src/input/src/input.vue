@@ -69,9 +69,9 @@
 import { inputProps } from './input'
 import { computed, inject, nextTick, onMounted, ref, shallowRef, useSlots, watch } from 'vue'
 import { calcTextareaHeight } from './utils'
-// import { useLocale } from '../hooks'
-// const { t } = useLocale()
 import { QyIcon } from '../../index'
+import { useLocale } from '@chenwei02/hooks'
+const { t } = useLocale()
 
 defineOptions({ name: 'qy-input' })
 
@@ -93,7 +93,7 @@ const model = computed({
 		emit('update:modelValue', val)
 	}
 })
-const placeholder = computed(() => props.placeholder ?? '')
+const placeholder = computed(() => props.placeholder ?? t(`qy.input.placeholder`))
 const showPlaceholder = computed(() => !props.disabled)
 const showPwdVisible = computed(() => props.showPassword && !props.disabled && !!model.value)
 const showClear = computed(
