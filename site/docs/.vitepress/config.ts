@@ -40,13 +40,14 @@ export default defineConfig({
 							filePath = path.resolve(docRoot, 'example', `${sourceFile}.vue`)
 							source = fs.readFileSync(filePath, 'utf-8')
 						}
+						// console.log('sourceFileToken=', sourceFileToken)
 						if (!source) new Error(`Incorrect source file: ${sourceFile}`)
-
+						const lang = 'vue'
 						const codeStr = source
-						const htmlStr = codeToHtml(source, { lang: 'vue' })
+						const htmlStr = codeToHtml(source, { lang })
 						const descStr = description
-
-						return `<demo src="${filePath}" desc="${descStr}" codeStr="${encodeURIComponent(
+						const lineTotal = source.trim().split('\n').length
+						return `<demo lang="${lang}" lines="${lineTotal}" src="${filePath}" desc="${descStr}" codeStr="${encodeURIComponent(
 							codeStr
 						)}" htmlStr="${encodeURIComponent(htmlStr)}">`
 					} else {

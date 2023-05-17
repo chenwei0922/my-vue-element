@@ -6,7 +6,7 @@ title: Input
 
 ## 基础用法
 
-::: demo
+::: demo vue
 
 input/basic
 
