@@ -1,6 +1,6 @@
 import { copyFile, mkdir, cp } from 'fs/promises'
 import fs from 'fs'
-import { run, pkgRoot, qyOutput, projRoot, themeDistPath } from '@chenwei02/build-utils'
+import { run, pkgRoot, qyOutput, projRoot, themeDistPath, qyRoot } from '@chenwei02/build-utils'
 import path from 'node:path'
 import { dest, series, src, TaskFunction } from 'gulp'
 
@@ -20,7 +20,12 @@ export const copyFiles = async () => {
 		cp(path.join(pkgRoot, '/chenwei02/dist/es'), path.join(qyOutput, '/es'), {
 			recursive: true
 		}),
-		copyFile(path.join(projRoot, '/global.d.ts'), path.join(qyOutput, '/global.d.ts'))
+		cp(path.join(pkgRoot, '/chenwei02/dist/dist'), path.join(qyOutput, '/dist'), {
+			recursive: true
+		}),
+		copyFile(path.join(projRoot, '/global.d.ts'), path.join(qyOutput, '/global.d.ts')),
+
+		copyFile(path.join(projRoot, '/global.d.ts'), path.join(qyRoot, '/dist/global.d.ts'))
 	])
 }
 
@@ -43,6 +48,7 @@ export const copyThemeBundle = async () => {
 export const copyFullStyle = async () => {
 	await mkdir(path.resolve(qyOutput, './dist'), { recursive: true })
 	cp(path.resolve(qyOutput, './theme/index.css'), path.resolve(qyOutput, './dist/index.css'), { recursive: true })
+	cp(path.resolve(qyOutput, './theme/index.css'), path.resolve(qyRoot, './dist/dist/index.css'), { recursive: true })
 }
 
 export default series(

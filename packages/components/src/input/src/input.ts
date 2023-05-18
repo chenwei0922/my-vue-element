@@ -54,7 +54,7 @@ export const inputProps = {
 	/**
 	 * 是否自动调整大小
 	 */
-	autosize: { type: Boolean, default: false },
+	autosize: { type: [Boolean, Object], default: false },
 	/**
 	 * 输入框行数
 	 */

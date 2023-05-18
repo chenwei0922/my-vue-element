@@ -27,9 +27,9 @@ const CONTEXT_STYLE = [
 ]
 type NodeStyle = {
 	contextStyle: string
-	boxSizing: string
 	paddingSize: number
-	borderSize: number
+	borderSize?: number
+	boxSizing?: string
 }
 type TextAreaHeight = {
 	height: string

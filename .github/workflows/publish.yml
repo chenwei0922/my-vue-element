@@ -1,0 +1,32 @@
+name: Publish Package
+on:
+  push:
+    branches: 
+      - master #只在master上push触发部署
+    paths-ignore: #下列文件的变更不触发部署，可自行添加
+      - README.md
+      - LICENSE
+
+# 要执行的任务
+jobs:
+  publish:
+    # needs: dependencies
+    name: Publish Package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@master
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org/'
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.28.0
+      - run: pnpm install
+      - run: pnpm run build
+      - run: npm publish ./dist/chenwei02/ --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          token: ${{ secrets.NPM_TOKEN }}
+      - run: pnpm run gen:tag

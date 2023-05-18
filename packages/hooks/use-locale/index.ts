@@ -6,7 +6,7 @@ export const localeContextKey = 'localeContextKey'
 
 export type TranslatorOption = Record<string, string | number>
 
-const buildTranslator = (locale: Language) => (path: string, option?: TranslatorOption) =>
+const buildTranslator = (locale: any) => (path: string, option?: TranslatorOption) =>
 	translate(path, option, unref(locale))
 const translate = (path: string, option: undefined | TranslatorOption, locale: Language) => {
 	// qy.datepicker.selectDate

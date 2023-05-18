@@ -79,7 +79,7 @@ const props = defineProps(inputProps)
 const emit = defineEmits(['update:modelValue', 'change', 'input', 'blur', 'focus', 'clear'])
 
 // 表单规则验证，当blur时
-const formItem = inject('formItemKey', undefined)
+const formItem = inject('formItemKey', undefined)!
 
 const slots = useSlots()
 const passwordVisible = ref(false)
@@ -104,10 +104,12 @@ const hasSuffix = computed(() => {
 	return showClear.value || showPwdVisible.value || showWordLimitVisible.value || !!props.suffixIcon || slots.suffixIcon
 })
 const hasPrefix = computed(() => !!props.prefixIcon || slots.prefixIcon)
-const textLength = computed(() => Array.from(model.value).length)
+const nativeInputValue = computed(() => String(props.modelValue) ?? '')
+const textLength = computed(() => nativeInputValue.value.length)
 const inputRef = ref(null)
-const input = shallowRef(null)
-const textarea = shallowRef(null)
+const input = shallowRef()
+const textarea = shallowRef()
+const _ref = computed(() => input.value || textarea.value)
 const textareaCalcStyle = shallowRef({})
 
 const handlePasswordVisible = () => {
@@ -130,17 +132,17 @@ const handleBlur = e => {
 	isfocus.value = false
 	emit('blur', e)
 	if (props.validateEvent) {
-		formItem?.validate('blur')
+		formItem?.validate?.('blur')
 	}
 }
 const handleChange = e => {
 	emit('change', e.target.value)
 }
 const focus = () => {
-	input.value.focus()
+	_ref.value?.focus()
 }
 const blur = () => {
-	input.value.blur()
+	_ref.value?.blur()
 }
 const clear = e => {
 	emit('update:modelValue', '')
