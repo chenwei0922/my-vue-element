@@ -13,7 +13,7 @@ icon/basic
 :::
 
 ## 图标集合
-
+<qy-icon name="close" />
 <demo src="../example/icon/list.vue" />
 
 
