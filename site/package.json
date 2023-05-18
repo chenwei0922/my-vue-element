@@ -10,9 +10,6 @@
 		"preview": "vitepress preview docs",
 		"deploy": "deploy.sh"
 	},
-	"exports": {
-		".": "./docs/"
-	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",

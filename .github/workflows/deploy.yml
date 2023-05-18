@@ -64,7 +64,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
-        run: pnpm install --filter=!site --no-frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
       
       - name: Build Modules
         run: pnpm run build
