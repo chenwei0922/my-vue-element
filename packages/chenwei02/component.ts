@@ -7,12 +7,12 @@ import { QyRadio, QyRadioGroup, QyRadioButton } from '@chenwei02/components/src/
 import type { Plugin } from 'vue'
 
 export default [
-	QyButton,
-	QyBreadcrumb,
-	QyBreadcrumbItem,
-	QyInput,
-	QyIcon,
-	QyRadio,
-	QyRadioGroup,
-	QyRadioButton
+  QyButton,
+  QyBreadcrumb,
+  QyBreadcrumbItem,
+  QyInput,
+  QyIcon,
+  QyRadio,
+  QyRadioGroup,
+  QyRadioButton
 ] as Plugin[]

@@ -1,23 +1,23 @@
 {
-	"name": "@chenwei02/build",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "pnpm -F build-utils run build && gulp -f gulpfile.ts",
-		"dev": "gulp -f gulp-watch.ts",
-		"clean": "rm -rf dist/",
-		"release": "gulp -f publish.ts",
-		"gen:tag": "gulp -f gen-tag.ts"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"devDependencies": {
-		"unbuild": "^0.7.6"
-	},
-	"dependencies": {
-		"rollup": "^3.21.5"
-	}
+  "name": "@chenwei02/build",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pnpm -F build-utils run build && gulp -f gulpfile.ts",
+    "dev": "gulp -f gulp-watch.ts",
+    "clean": "rm -rf dist/",
+    "release": "gulp -f publish.ts",
+    "gen:tag": "gulp -f gen-tag.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "unbuild": "^0.7.6"
+  },
+  "dependencies": {
+    "rollup": "^3.21.5"
+  }
 }

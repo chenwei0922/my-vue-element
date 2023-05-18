@@ -1,26 +1,26 @@
 {
-	"name": "@chenwei02/components",
-	"version": "1.0.0",
-	"description": "",
-	"main": "src/index.ts",
-	"module": "src/index.ts",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "vite build",
-		"start": "gulp -f gulpfile.ts"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"peerDependencies": {
-		"vue": "^3.2.0",
-		"vite": "^4.1.4"
-	},
-	"types": "index.d.ts",
-	"dependencies": {
-		"@chenwei02/utils": "workspace:^1.0.0"
-	},
-	"devDependencies": {
-		"vite-plugin-svg-icons": "^2.0.1"
-	}
+  "name": "@chenwei02/components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build",
+    "start": "gulp -f gulpfile.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "vue": "^3.2.0",
+    "vite": "^4.1.4"
+  },
+  "types": "index.d.ts",
+  "dependencies": {
+    "@chenwei02/utils": "workspace:^1.0.0"
+  },
+  "devDependencies": {
+    "vite-plugin-svg-icons": "^2.0.1"
+  }
 }

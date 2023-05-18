@@ -14,24 +14,24 @@ import { delPath, themeDistPath, themeRoot } from '@chenwei02/build-utils'
 
 // 打包样式
 export const buildCss = () => {
-	const sass = gulpSass(dartSass)
-	return (
-		src(`${themeRoot}/src/*.scss`)
-			.pipe(sass.sync())
-			.pipe(autoprefixer({ cascade: false }))
-			// .pipe(cleanCSS({}))
-			.pipe(dest(`${themeDistPath}`))
-	)
+  const sass = gulpSass(dartSass)
+  return (
+    src(`${themeRoot}/src/*.scss`)
+      .pipe(sass.sync())
+      .pipe(autoprefixer({ cascade: false }))
+      // .pipe(cleanCSS({}))
+      .pipe(dest(`${themeDistPath}`))
+  )
 }
 
 // 清空打包记录
 export const cleanCss = () => {
-	return delPath(themeDistPath)
+  return delPath(themeDistPath)
 }
 
 // 监听文件变更，重新打包
 export const watchCss = () => {
-	watch(`${themeRoot}/src/*.scss`, series(cleanCss, buildCss))
+  watch(`${themeRoot}/src/*.scss`, series(cleanCss, buildCss))
 }
 
 export default series(cleanCss, buildCss)

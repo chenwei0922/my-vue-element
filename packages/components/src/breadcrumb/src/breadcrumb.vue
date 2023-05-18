@@ -9,7 +9,7 @@ provide('breadcrumbKey', props)
 </script>
 
 <template>
-	<div class="qy-breadcrumb">
-		<slot />
-	</div>
+  <div class="qy-breadcrumb">
+    <slot />
+  </div>
 </template>

@@ -11,67 +11,71 @@ export const withTaskName = <T extends TaskFunction>(name: string, fn: T) => Obj
 //   )
 
 export const copyFiles = async () => {
-	return Promise.all([
-		copyFile(path.join(pkgRoot, '/chenwei02/package.json'), path.join(qyOutput, '/package.json')),
-		copyFile(path.join(pkgRoot, '/chenwei02/README.md'), path.join(qyOutput, '/README.md')),
-		src(`${pkgRoot}/chenwei02/dist/lib`).pipe(dest(`${qyOutput}/lib`)),
-		src(`${pkgRoot}/chenwei02/dist/es`).pipe(dest(`${qyOutput}/es`)),
+  return Promise.all([
+    copyFile(path.join(pkgRoot, '/chenwei02/package.json'), path.join(qyOutput, '/package.json')),
+    copyFile(path.join(pkgRoot, '/chenwei02/README.md'), path.join(qyOutput, '/README.md')),
+    src(`${pkgRoot}/chenwei02/dist/lib`).pipe(dest(`${qyOutput}/lib`)),
+    src(`${pkgRoot}/chenwei02/dist/es`).pipe(dest(`${qyOutput}/es`)),
 
-		// cp(path.join(pkgRoot, '/chenwei02/dist/lib'), path.join(qyOutput, '/lib'), {
-		// 	recursive: true
-		// }),
-		// cp(path.join(pkgRoot, '/chenwei02/dist/es'), path.join(qyOutput, '/es'), {
-		// 	recursive: true
-		// }),
+    // cp(path.join(pkgRoot, '/chenwei02/dist/lib'), path.join(qyOutput, '/lib'), {
+    // 	recursive: true
+    // }),
+    // cp(path.join(pkgRoot, '/chenwei02/dist/es'), path.join(qyOutput, '/es'), {
+    // 	recursive: true
+    // }),
 
-		cp(path.join(pkgRoot, '/chenwei02/dist/dist'), path.join(qyOutput, '/dist'), {
-			recursive: true
-		}),
-		copyFile(path.join(projRoot, '/global.d.ts'), path.join(qyOutput, '/global.d.ts')),
+    cp(path.join(pkgRoot, '/chenwei02/dist/dist'), path.join(qyOutput, '/dist'), {
+      recursive: true
+    }),
+    copyFile(path.join(projRoot, '/global.d.ts'), path.join(qyOutput, '/global.d.ts')),
 
-		copyFile(path.join(projRoot, '/global.d.ts'), path.join(qyRoot, '/dist/global.d.ts'))
-	])
+    copyFile(path.join(projRoot, '/global.d.ts'), path.join(qyRoot, '/dist/global.d.ts'))
+  ])
 }
 
 export const updatePackage = async () => {
-	const srcPath = path.join(qyOutput, '/package.json')
-	let content = fs.readFileSync(srcPath, 'utf8')
-	const reg = /dist\//gi
-	if (reg.test(content)) {
-		content = content.replace(reg, '')
-		fs.writeFileSync(srcPath, content, 'utf-8')
-	}
+  const srcPath = path.join(qyOutput, '/package.json')
+  let content = fs.readFileSync(srcPath, 'utf8')
+  const reg = /dist\//gi
+  if (reg.test(content)) {
+    content = content.replace(reg, '')
+    fs.writeFileSync(srcPath, content, 'utf-8')
+  }
 }
 
 export const copyThemeBundle = async () => {
-	src(`${themeDistPath}/**`).pipe(dest(`${pkgRoot}/chenwei02/dist/theme`))
-	src(`${themeDistPath}/**`).pipe(dest(`${qyOutput}/theme`))
+  src(`${themeDistPath}/**`).pipe(dest(`${pkgRoot}/chenwei02/dist/theme`))
+  src(`${themeDistPath}/**`).pipe(dest(`${qyOutput}/theme`))
 
-	// svg
-	src(`${pkgRoot}/icons/svg/*.svg`).pipe(dest(`${pkgRoot}/chenwei02/dist/es/icons/svg`))
-	src(`${pkgRoot}/icons/svg/*.svg`).pipe(dest(`${qyOutput}/es/icons/svg`))
-	src(`${pkgRoot}/icons/svg/*.svg`).pipe(dest(`${pkgRoot}/chenwei02/dist/lib/icons/svg`))
-	src(`${pkgRoot}/icons/svg/*.svg`).pipe(dest(`${qyOutput}/lib/icons/svg`))
+  // svg
+  src(`${pkgRoot}/icons/svg/*.svg`).pipe(dest(`${pkgRoot}/chenwei02/dist/es/icons/svg`))
+  src(`${pkgRoot}/icons/svg/*.svg`).pipe(dest(`${qyOutput}/es/icons/svg`))
+  src(`${pkgRoot}/icons/svg/*.svg`).pipe(dest(`${pkgRoot}/chenwei02/dist/lib/icons/svg`))
+  src(`${pkgRoot}/icons/svg/*.svg`).pipe(dest(`${qyOutput}/lib/icons/svg`))
 }
 
 // 复制样式
 export const copyFullStyle = async () => {
-	await mkdir(path.resolve(qyOutput, './dist'), { recursive: true })
-	cp(path.resolve(qyOutput, './theme/index.css'), path.resolve(qyOutput, './dist/index.css'), { recursive: true })
-	cp(path.resolve(qyOutput, './theme/index.css'), path.resolve(qyRoot, './dist/dist/index.css'), { recursive: true })
+  await mkdir(path.resolve(qyOutput, './dist'), { recursive: true })
+  cp(path.resolve(qyOutput, './theme/index.css'), path.resolve(qyOutput, './dist/index.css'), {
+    recursive: true
+  })
+  cp(path.resolve(qyOutput, './theme/index.css'), path.resolve(qyRoot, './dist/dist/index.css'), {
+    recursive: true
+  })
 }
 
 export default series(
-	withTaskName('clean', () => run('pnpm run clean')),
-	withTaskName('createOutput', () => mkdir(qyOutput, { recursive: true })),
+  withTaskName('clean', () => run('pnpm run clean')),
+  withTaskName('createOutput', () => mkdir(qyOutput, { recursive: true })),
 
-	// buildModules
-	withTaskName('buildModules', () => run('pnpm run -C ../../packages/chenwei02 start')),
+  // buildModules
+  withTaskName('buildModules', () => run('pnpm run -C ../../packages/chenwei02 start')),
 
-	// buildStyle
-	withTaskName('buildTheme', () => run('pnpm run -C ../../packages/theme build')),
-	copyThemeBundle,
-	copyFiles,
-	copyFullStyle,
-	updatePackage
+  // buildStyle
+  withTaskName('buildTheme', () => run('pnpm run -C ../../packages/theme build')),
+  copyThemeBundle,
+  copyFiles,
+  copyFullStyle,
+  updatePackage
 )

@@ -1,18 +1,18 @@
 {
-	"name": "@chenwei02/icons-vue",
-	"version": "1.0.0",
-	"description": "",
-	"type": "module",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"build:build": "tsx build/build.ts"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "MIT",
-	"devDependencies": {
-		"esbuild": "^0.17.19",
-		"esbuild-plugin-globals": "^0.2.0",
-		"tsx": "^3.12.7"
-	}
+  "name": "@chenwei02/icons-vue",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:build": "tsx build/build.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.17.19",
+    "esbuild-plugin-globals": "^0.2.0",
+    "tsx": "^3.12.7"
+  }
 }
