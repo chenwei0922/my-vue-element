@@ -32,7 +32,7 @@ const deHtml = computed(() => {
 	return `${decodeURIComponent(props.htmlStr)}` ?? ''
 })
 /* @vite-ignore */
-const demoslot = props.src && defineAsyncComponent(() => import(props.src))
+const demoslot = props.src && modules[props.src] ? defineAsyncComponent(modules[props.src]) : null
 const visible = ref(false)
 const hasHtml = computed(() => !!deHtml.value)
 
