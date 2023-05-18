@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { onMounted, computed, ref, defineAsyncComponent } from 'vue'
 
+const modules = import.meta.glob('../example/**/*.vue')
+
+console.log('modules=', modules)
+
 const props = defineProps({
 	// 组件path
 	src: { type: String, default: '' },
@@ -35,7 +39,9 @@ const hasHtml = computed(() => !!deHtml.value)
 const toggleVisible = () => {
 	visible.value = !visible.value
 }
-onMounted(() => {})
+onMounted(() => {
+	console.log('filePath=', props.src)
+})
 </script>
 <template>
 	<div class="qy-element-demo">

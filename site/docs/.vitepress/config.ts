@@ -4,6 +4,13 @@ import path from 'path'
 import mdContainer from 'markdown-it-container'
 import { docRoot } from '@chenwei02/build-utils'
 import { getHighlighter } from 'shiki'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const demoComponentsPath = path.resolve(__dirname, '../vitepress/vp-demo.vue')
+console.log(demoComponentsPath)
+
 // 同步定义shiki的codeToHtml
 let codeToHtml: any = null
 ;(async () => {
@@ -29,6 +36,7 @@ export default defineConfig({
 					return params.trim().match(/^demo\s*(.*)$/)
 				},
 				render(tokens, idx) {
+					// console.log('docPath=', tokens[1])
 					const m = tokens[idx].info.trim().match(/^demo\s*(.*)$/)
 					if (tokens[idx].nesting === 1) {
 						const description = m && m.length > 1 ? m[1] : ''
@@ -40,7 +48,9 @@ export default defineConfig({
 							filePath = path.resolve(docRoot, 'example', `${sourceFile}.vue`)
 							source = fs.readFileSync(filePath, 'utf-8')
 						}
-						// console.log('sourceFileToken=', sourceFileToken)
+						console.log('sourceFileToken=', sourceFileToken)
+						console.log('filePath=', filePath)
+
 						if (!source) new Error(`Incorrect source file: ${sourceFile}`)
 						const lang = 'vue'
 						const codeStr = source

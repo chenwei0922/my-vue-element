@@ -54,3 +54,7 @@ gulp-clean-css
 @types/gulp-rename gulp-rename : 重命名
 
 gulp-concat: 合并
+
+
+unplugin-vue-components
+unplugin-vue-macros
