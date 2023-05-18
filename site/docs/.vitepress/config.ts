@@ -97,7 +97,8 @@ export default defineConfig({
 						{ text: 'Button', link: '/components/button' },
 						{ text: 'Breadcrumb', link: '/components/breadcrumb' },
 						{ text: 'Input', link: '/components/input' },
-						{ text: 'Icon', link: '/components/icon' }
+						{ text: 'Icon', link: '/components/icon' },
+						{ text: 'Radio', link: '/components/radio' }
 					]
 				}
 			]

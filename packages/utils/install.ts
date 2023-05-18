@@ -2,11 +2,18 @@ import type { App, Plugin } from 'vue'
 
 export type SFCWithInstall<T> = T & Plugin
 
-export const withInstall = <T>(comp: T) => {
-	;(comp as SFCWithInstall<T>).install = (app: App) => {
-		const name = (comp as any).name
-		// 注册组件
-		app.component(name, comp as SFCWithInstall<T>)
+export const withInstall = <T>(main: T, extra?: T) => {
+	;(main as SFCWithInstall<T>).install = (app: App) => {
+		for (const comp of [main, ...Object.values(extra ?? {})]) {
+			// 注册组件
+			const name = (comp as any).name
+			app.component(name, comp)
+		}
 	}
-	return comp as SFCWithInstall<T>
+	if (extra) {
+		for (const [key, comp] of Object.entries(extra)) {
+			;(main as any)[key] = comp
+		}
+	}
+	return main as SFCWithInstall<T>
 }

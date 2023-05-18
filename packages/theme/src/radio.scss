@@ -1,0 +1,96 @@
+@use 'sass:map';
+@use './common/var.scss' as *;
+
+.qy-radio-group {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.qy-radio {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 30px;
+  cursor: pointer;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .qy-radio__input {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input {}
+  }
+
+  .qy-radio__label {
+    @include main-text;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+
+  &.checked {
+    .qy-radio__label {
+      color: getCssVar('text-primary');
+    }
+  }
+}
+
+.qy-radio-button {
+  cursor: pointer;
+
+  .qy-radio__label {
+    @include main-text;
+    display: inline-block;
+    padding: 8px 15px;
+    border: getCssVar('border');
+    border-left: none;
+    border-right: none;
+    line-height: 1;
+  }
+
+  &:first-child {
+    .qy-radio__label {
+      border-left: getCssVar('border');
+      border-top-left-radius: getCssVar('border-radius-base');
+      border-bottom-left-radius: getCssVar('border-radius-base');
+    }
+  }
+
+  &:last-child {
+    .qy-radio__label {
+      border-right: getCssVar('border');
+      border-top-right-radius: getCssVar('border-radius-base');
+      border-bottom-right-radius: getCssVar('border-radius-base');
+    }
+  }
+
+  &:hover:not(.checked, .disabled) {
+    .qy-radio__label {
+      color: getCssVar('text-primary');
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+
+  &.checked {
+    .qy-radio__label {
+      background-color: getCssVar('primary');
+      color: getCssVar('color-white');
+      border-color: transparent;
+    }
+  }
+}

@@ -1,4 +1,6 @@
 /* color palette from <https://github.com/vuejs/theme> */
+// https://www.runoob.com/sass/sass-mixin-include.html
+//定义变量
 :root {
   /* 色值 */
   --qy-color-white: #ffffff;
@@ -153,6 +155,7 @@ p{
   margin: 0;
 }
 
+//定义混入
 @mixin font-weight-normal {
   font-weight: var(--qy-font-weight-normal);
   font-family: var(--qy-family-normal);
@@ -164,4 +167,22 @@ p{
 @mixin font-weight-bold {
   font-weight: var(--qy-font-weight-bold);
   font-family: var(--qy-family-bold);
+}
+
+@mixin main-text($color:var(--qy-text-main), $size:var(--qy-font-normal)){
+  font-size: $size;
+  color: $color;
+  font-weight: var(--qy-font-weight-normal);
+  font-family: var(--qy-family-normal);
+}
+
+//定义函数
+@function getCssVar($args...){
+  $name: '--qy';
+  @each $item in $args{
+    @if $item != '' {
+      $name: $name + '-' + $item;
+    }
+  }
+  @return var(#{$name})
 }
