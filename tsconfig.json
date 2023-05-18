@@ -1,36 +1,37 @@
 {
-	"compilerOptions": {
-		"outDir": "./dist",
-		"baseUrl": ".",
-		"jsx": "preserve",
-		"strict": true,
-		"target": "ES2015",
-		"module": "ESNext",
-		"suppressImplicitAnyIndexErrors": true,
-		"allowSyntheticDefaultImports": true,
-		"ignoreDeprecations": "5.0",
-		"skipLibCheck": true,
-		"esModuleInterop": true,
-		"moduleResolution": "node",
-		"lib": ["ESNext", "DOM"],
-		"resolveJsonModule": true,
-		"useDefineForClassFields": true,
-		"isolatedModules": true,
-		"noEmit": true,
-		"types": [
-			"node",
-			"unplugin-vue-define-options/macros-global"
-			// "unplugin-vue-macros/macros-global"
-		],
-		"noImplicitAny": false,
-		"preserveSymlinks": false,
-		"paths": {
-			"@chenwei02/*": ["packages/*"]
-		}
-	},
-	"references": [
-		{
-			"path": "./tsconfig.node.json"
-		}
-	]
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "strict": true,
+    "target": "ES2015",
+    "module": "ESNext",
+    "suppressImplicitAnyIndexErrors": true,
+    "allowSyntheticDefaultImports": true,
+    "ignoreDeprecations": "5.0",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "lib": ["ESNext", "DOM"],
+    "resolveJsonModule": true,
+    "useDefineForClassFields": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "types": [
+      "node",
+      "unplugin-vue-define-options/macros-global",
+      "vite-plugin-svg-icons/client"
+      // "unplugin-vue-macros/macros-global"
+    ],
+    "noImplicitAny": false,
+    "preserveSymlinks": false,
+    "paths": {
+      "@chenwei02/*": ["packages/*"]
+    }
+  },
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }
