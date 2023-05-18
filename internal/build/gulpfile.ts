@@ -42,6 +42,12 @@ export const updatePackage = async () => {
 export const copyThemeBundle = async () => {
 	src(`${themeDistPath}/**`).pipe(dest(`${pkgRoot}/chenwei02/dist/theme`))
 	src(`${themeDistPath}/**`).pipe(dest(`${qyOutput}/theme`))
+
+	// svg
+	src(`${pkgRoot}/icons/svg/*.svg`).pipe(dest(`${pkgRoot}/chenwei02/dist/es/icons/svg`))
+	src(`${pkgRoot}/icons/svg/*.svg`).pipe(dest(`${qyOutput}/es/icons/svg`))
+	src(`${pkgRoot}/icons/svg/*.svg`).pipe(dest(`${pkgRoot}/chenwei02/dist/lib/icons/svg`))
+	src(`${pkgRoot}/icons/svg/*.svg`).pipe(dest(`${qyOutput}/lib/icons/svg`))
 }
 
 // 复制样式
