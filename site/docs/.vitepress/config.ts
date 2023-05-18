@@ -57,7 +57,8 @@ export default defineConfig({
 						const htmlStr = codeToHtml(source, { lang })
 						const descStr = description
 						const lineTotal = source.trim().split('\n').length
-						return `<demo lang="${lang}" lines="${lineTotal}" src="${filePath}" desc="${descStr}" codeStr="${encodeURIComponent(
+						const codePath = `../example/${sourceFile}.vue`
+						return `<demo lang="${lang}" lines="${lineTotal}" src="${codePath}" desc="${descStr}" codeStr="${encodeURIComponent(
 							codeStr
 						)}" htmlStr="${encodeURIComponent(htmlStr)}">`
 					} else {
