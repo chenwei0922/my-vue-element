@@ -23,12 +23,18 @@ export const copyFiles = async () => {
     cp(path.join(pkgRoot, '/chenwei02/dist/es'), path.join(qyOutput, '/es'), {
       recursive: true
     }),
-
     cp(path.join(pkgRoot, '/chenwei02/dist/dist'), path.join(qyOutput, '/dist'), {
       recursive: true
     }),
-    copyFile(path.join(projRoot, '/global.d.ts'), path.join(qyOutput, '/global.d.ts')),
 
+    // 将svg打包后的结果复制一份到外层
+    cp(path.join(pkgRoot, '/chenwei02/dist/es/_virtual'), path.resolve(qyOutput, './_virtual'), {
+      recursive: true
+    }),
+    cp(path.join(pkgRoot, '/chenwei02/dist/es/_virtual'), path.resolve(qyRoot, './dist/_virtual'), {
+      recursive: true
+    }),
+    copyFile(path.join(projRoot, '/global.d.ts'), path.join(qyOutput, '/global.d.ts')),
     copyFile(path.join(projRoot, '/global.d.ts'), path.join(qyRoot, '/dist/global.d.ts'))
   ])
 }
@@ -67,8 +73,12 @@ export const copyFullStyle = async () => {
 
 export default series(
   withTaskName('clean', () => run('pnpm -w run clean')),
-  withTaskName('createOutput', () => mkdir(qyOutput, { recursive: true })),
-
+  withTaskName('createOutput', async () => {
+    mkdir(qyOutput, { recursive: true })
+    mkdir(path.resolve(qyOutput, 'dist'), { recursive: true })
+    mkdir(path.resolve(qyOutput, 'es'), { recursive: true })
+    mkdir(path.resolve(qyOutput, 'lib'), { recursive: true })
+  }),
   // buildModules
   withTaskName('buildModules', () => run('pnpm run -C ../../packages/chenwei02 start')),
 

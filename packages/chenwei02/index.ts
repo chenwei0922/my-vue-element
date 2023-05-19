@@ -1,3 +1,4 @@
+import 'virtual:svg-icons-register'
 import installer from './default'
 
 export * from '@chenwei02/components'
