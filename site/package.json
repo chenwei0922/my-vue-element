@@ -1,34 +1,35 @@
 {
-	"name": "site",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev": "vitepress dev docs",
-		"build": "vitepress build docs",
-		"preview": "vitepress preview docs",
-		"deploy": "deploy.sh"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"pnpm": {
-		"peerDependencyRules": {
-			"ignoreMissing": [
-				"@algolia/client-search"
-			]
-		}
-	},
-	"devDependencies": {
-		"markdown-it": "^13.0.1",
-		"markdown-it-container": "^3.0.0",
-		"shiki": "^0.14.2",
-		"vitepress": "1.0.0-alpha.64"
-	},
-	"dependencies": {
-		"@algolia/client-search": "^4.16.0",
-		"@chenwei02/qy-element": "workspace:^1.0.0",
-		"vue": "^3.2.47"
-	}
+  "name": "site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs",
+    "preview": "vitepress preview docs",
+    "deploy": "deploy.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ]
+    }
+  },
+  "devDependencies": {
+    "markdown-it": "^13.0.1",
+    "markdown-it-container": "^3.0.0",
+    "shiki": "^0.14.2",
+    "vitepress": "1.0.0-alpha.64"
+  },
+  "dependencies": {
+    "@algolia/client-search": "^4.16.0",
+    "@chenwei02/qy-element": "workspace:^1.0.0",
+    "vue": "^3.2.47"
+  }
 }

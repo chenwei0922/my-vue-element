@@ -14,15 +14,15 @@ export const copyFiles = async () => {
   return Promise.all([
     copyFile(path.join(pkgRoot, '/chenwei02/package.json'), path.join(qyOutput, '/package.json')),
     copyFile(path.join(pkgRoot, '/chenwei02/README.md'), path.join(qyOutput, '/README.md')),
-    src(`${pkgRoot}/chenwei02/dist/lib`).pipe(dest(`${qyOutput}/lib`)),
-    src(`${pkgRoot}/chenwei02/dist/es`).pipe(dest(`${qyOutput}/es`)),
+    // src(`${pkgRoot}/chenwei02/dist/lib`).pipe(dest(`${qyOutput}/lib`)),
+    // src(`${pkgRoot}/chenwei02/dist/es`).pipe(dest(`${qyOutput}/es`)),
 
-    // cp(path.join(pkgRoot, '/chenwei02/dist/lib'), path.join(qyOutput, '/lib'), {
-    // 	recursive: true
-    // }),
-    // cp(path.join(pkgRoot, '/chenwei02/dist/es'), path.join(qyOutput, '/es'), {
-    // 	recursive: true
-    // }),
+    cp(path.join(pkgRoot, '/chenwei02/dist/lib'), path.join(qyOutput, '/lib'), {
+      recursive: true
+    }),
+    cp(path.join(pkgRoot, '/chenwei02/dist/es'), path.join(qyOutput, '/es'), {
+      recursive: true
+    }),
 
     cp(path.join(pkgRoot, '/chenwei02/dist/dist'), path.join(qyOutput, '/dist'), {
       recursive: true
@@ -66,7 +66,7 @@ export const copyFullStyle = async () => {
 }
 
 export default series(
-  withTaskName('clean', () => run('pnpm run clean')),
+  withTaskName('clean', () => run('pnpm -w run clean')),
   withTaskName('createOutput', () => mkdir(qyOutput, { recursive: true })),
 
   // buildModules

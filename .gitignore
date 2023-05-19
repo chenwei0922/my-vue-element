@@ -31,3 +31,4 @@ yarn.lock
 
 dist
 **/dist
+cache
