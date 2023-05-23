@@ -1,0 +1,47 @@
+@use 'sass:map';
+@use './common/var.scss' as *;
+
+.qy-checkbox-group {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.qy-checkbox {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 30px;
+  cursor: pointer;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .qy-checkbox__input {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input {}
+  }
+
+  .qy-checkbox__label {
+    @include main-text;
+    margin-left: 8px;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+
+  &.checked {
+    .qy-checkbox__label {
+      color: getCssVar('text-primary');
+    }
+  }
+}

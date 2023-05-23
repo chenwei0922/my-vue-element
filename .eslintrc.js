@@ -165,6 +165,8 @@ module.exports = defineConfig({
         multiline: 'below'
       }
     ],
+    // 关闭 Import from 'vue' instead of '@vue/shared' 这种校验错误
+    'vue/prefer-import-from-vue': 'off',
 
     // js/ts
     // 行尾不使用分号

@@ -2,7 +2,7 @@ packages:
   # 直接子目录 all packages in direct subdirs of packages/  
   # - 'packages/*'
   # all packages in subdirs of packages/
-  - 'packages/**'
+  - 'packages/*'
   - 'internal/*'
   - 'play'
   - 'site'

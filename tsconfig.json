@@ -26,7 +26,8 @@
     "noImplicitAny": false,
     "preserveSymlinks": false,
     "paths": {
-      "@chenwei02/*": ["packages/*"]
+      "@chenwei02/components": ["./packages/components"],
+      "*": ["./node_modules/*"]
     }
   },
   "references": [

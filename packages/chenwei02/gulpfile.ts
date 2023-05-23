@@ -4,11 +4,6 @@ import dartSass from 'sass'
 import gulpSass from 'gulp-sass'
 import autoprefixer from 'gulp-autoprefixer'
 
-// 删除上次的打包内容
-export const cleanComponent = () => {
-  return run('rm -rf dist/')
-}
-
 // 打包内部样式
 // 这里解释一下gulp打包样式的原因:
 // vite打包的时候，会将样式文件全部打包到同一个文件，这样的话我们每次都要全量引入所有的样式文件，做不到按需引入效果。
@@ -38,4 +33,4 @@ export const watchModules = () => {
   )
 }
 
-export default series(cleanComponent, parallel(buildStyle, buildComponent))
+export default parallel(buildStyle, buildComponent)

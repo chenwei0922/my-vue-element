@@ -19,3 +19,5 @@ export const themeDistPath = path.resolve(themeRoot, './dist')
 
 // doc目录
 export const docRoot = path.resolve(projRoot, './site/docs')
+// build目录
+export const buildRoot = path.resolve(projRoot, './internal/build')

@@ -94,11 +94,12 @@ export default defineConfig({
         {
           text: '基础组件',
           items: [
-            { text: 'Button', link: '/components/button' },
-            { text: 'Breadcrumb', link: '/components/breadcrumb' },
-            { text: 'Input', link: '/components/input' },
-            { text: 'Icon', link: '/components/icon' },
-            { text: 'Radio', link: '/components/radio' }
+            { text: 'Button 按钮', link: '/components/button' },
+            { text: 'Breadcrumb 面包屑', link: '/components/breadcrumb' },
+            { text: 'Input 输入框', link: '/components/input' },
+            { text: 'Icon 图标', link: '/components/icon' },
+            { text: 'Radio 单选框', link: '/components/radio' },
+            { text: 'Checkbox 多选框', link: '/components/checkbox' }
           ]
         }
       ]

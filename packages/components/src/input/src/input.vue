@@ -79,7 +79,7 @@ const props = defineProps(inputProps)
 const emit = defineEmits(['update:modelValue', 'change', 'input', 'blur', 'focus', 'clear'])
 
 // 表单规则验证，当blur时
-const formItem = inject('formItemKey', undefined)!
+const formItem = inject('formItemKey', undefined) as any
 
 const slots = useSlots()
 const passwordVisible = ref(false)
@@ -132,7 +132,7 @@ const handleBlur = e => {
   isfocus.value = false
   emit('blur', e)
   if (props.validateEvent) {
-    formItem?.validate?.('blur')
+    formItem?.validate('blur')
   }
 }
 const handleChange = e => {

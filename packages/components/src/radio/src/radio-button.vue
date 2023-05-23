@@ -6,21 +6,13 @@
   </label>
 </template>
 <script setup lang="ts">
-import { nextTick } from 'vue'
 import { radioButtonEmits, radioButtonProps } from './radio-button'
 import { useRadio } from './use-radio'
-import { CHANGE_EVENT } from './constants'
 
 defineOptions({ name: 'qy-radio-button' })
 
 const props = defineProps(radioButtonProps)
 const emit = defineEmits(radioButtonEmits)
 
-const { disabled, modelValue } = useRadio(props, emit)
-
-const handleChange = () => {
-  if (disabled.value) return
-  modelValue.value = props.label
-  nextTick(() => emit(CHANGE_EVENT, modelValue.value))
-}
+const { disabled, modelValue, handleChange } = useRadio(props, emit)
 </script>

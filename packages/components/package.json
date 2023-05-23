@@ -16,11 +16,5 @@
     "vue": "^3.2.0",
     "vite": "^4.1.4"
   },
-  "types": "index.d.ts",
-  "dependencies": {
-    "@chenwei02/utils": "workspace:^1.0.0"
-  },
-  "devDependencies": {
-    "vite-plugin-svg-icons": "^2.0.1"
-  }
+  "types": "index.d.ts"
 }

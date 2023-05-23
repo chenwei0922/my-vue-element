@@ -6,7 +6,8 @@
 <script setup lang="ts">
 import { inject, nextTick, toRefs, provide, reactive, watch } from 'vue'
 import { RadioGroupProps, radioGroupEmits, radioGroupProps } from './radio-group'
-import { radioGroupKey, UPDATE_MODEL_EVENT, CHANGE_EVENT } from './constants'
+import { radioGroupKey } from './constants'
+import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '@chenwei02/utils'
 
 defineOptions({ name: 'qy-radio-group' })
 
@@ -14,7 +15,7 @@ const props = defineProps(radioGroupProps)
 const emit = defineEmits(radioGroupEmits)
 
 // 表单规则验证，当change时
-const formItem = inject('formItemKey', undefined)
+const formItem = inject('formItemKey', undefined) as any
 
 const changeEvent = (val: RadioGroupProps['modelValue']) => {
   emit(UPDATE_MODEL_EVENT, val)

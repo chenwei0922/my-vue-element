@@ -9,10 +9,8 @@
   </label>
 </template>
 <script setup lang="ts">
-import { nextTick } from 'vue'
 import { QyIcon } from '../../index'
 import { radioProps, radioEmits } from './radio'
-import { CHANGE_EVENT } from './constants'
 import { useRadio } from './use-radio'
 
 defineOptions({ name: 'qy-radio' })
@@ -20,11 +18,5 @@ defineOptions({ name: 'qy-radio' })
 const props = defineProps(radioProps)
 const emit = defineEmits(radioEmits)
 
-const { disabled, modelValue } = useRadio(props, emit)
-
-const handleChange = () => {
-  if (disabled.value) return
-  modelValue.value = props.label
-  nextTick(() => emit(CHANGE_EVENT, modelValue.value))
-}
+const { disabled, modelValue, handleChange } = useRadio(props, emit)
 </script>

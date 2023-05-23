@@ -5,21 +5,21 @@ import DefineOptions from 'unplugin-vue-define-options/vite'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'node:path'
 
-import { version } from './package.json'
-const banner = `/*! qy-element v${version} */\n`
+// import { version } from './package.json'
+// const banner = `/*! qy-element v${version} */\n`
 
 export default defineConfig({
   // base: './',
   build: {
     // 打包后文件目录
-    // outDir: './dist',
+    outDir: './dist',
     // 压缩
     minify: false,
-    target: 'es2018',
+    target: 'es2015',
     rollupOptions: {
       // 忽略打包vue文件和.scss文件
-      external: ['vue', /\.scss/],
-      input: ['index.ts'],
+      external: ['vue', '@vue/shared', /\.scss/],
+      input: ['../chenwei02/index.ts'],
       output: [
         {
           // 打包格式
@@ -46,7 +46,8 @@ export default defineConfig({
           // 配置打包根目录
           dir: './dist/lib',
           sourcemap: true
-        },
+        }
+        /* ,
         {
           // 打包格式
           format: 'umd',
@@ -71,12 +72,13 @@ export default defineConfig({
           banner,
           sourcemap: true
         }
+        */
       ]
     },
     lib: {
       entry: 'index.ts',
-      name: 'test'
-      // fileName: 'chenwei02',
+      name: 'MyLib',
+      fileName: 'my-lib'
       // formats: ['es', 'umd', 'cjs']
     }
   },

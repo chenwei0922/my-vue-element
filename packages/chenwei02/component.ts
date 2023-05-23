@@ -3,6 +3,7 @@ import { QyBreadcrumb, QyBreadcrumbItem } from '@chenwei02/components/src/breadc
 import { QyInput } from '@chenwei02/components/src/input'
 import { QyIcon } from '@chenwei02/components/src/icon'
 import { QyRadio, QyRadioGroup, QyRadioButton } from '@chenwei02/components/src/radio'
+import { QyCheckbox, QyCheckboxGroup } from '@chenwei02/components/src/checkbox'
 
 import type { Plugin } from 'vue'
 
@@ -14,5 +15,7 @@ export default [
   QyIcon,
   QyRadio,
   QyRadioGroup,
-  QyRadioButton
+  QyRadioButton,
+  QyCheckbox,
+  QyCheckboxGroup
 ] as Plugin[]

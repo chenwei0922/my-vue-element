@@ -2,9 +2,9 @@ import { copyFile, mkdir, cp } from 'fs/promises'
 import fs from 'fs'
 import { run, pkgRoot, qyOutput, projRoot, themeDistPath, qyRoot } from '@chenwei02/build-utils'
 import path from 'node:path'
-import { dest, series, src, TaskFunction } from 'gulp'
+import { dest, parallel, series, src } from 'gulp'
+import { withTaskName, buildFullBundle } from './src'
 
-export const withTaskName = <T extends TaskFunction>(name: string, fn: T) => Object.assign(fn, { displayName: name })
 // export const runTask = (name: string) =>
 //   withTaskName(`shellTask:${name}`, () =>
 //     // run(`pnpm run start ${name}`, buildRoot)
@@ -28,10 +28,10 @@ export const copyFiles = async () => {
     }),
 
     // 将svg打包后的结果复制一份到外层
-    cp(path.join(pkgRoot, '/chenwei02/dist/es/_virtual'), path.resolve(qyOutput, './_virtual'), {
+    cp(path.join(pkgRoot, '/chenwei02/dist/es/_virtual'), path.resolve(qyRoot, './dist/_virtual'), {
       recursive: true
     }),
-    cp(path.join(pkgRoot, '/chenwei02/dist/es/_virtual'), path.resolve(qyRoot, './dist/_virtual'), {
+    cp(path.join(pkgRoot, '/chenwei02/dist/es/_virtual'), path.resolve(qyOutput, './_virtual'), {
       recursive: true
     }),
     copyFile(path.join(projRoot, '/global.d.ts'), path.join(qyOutput, '/global.d.ts')),
@@ -42,9 +42,23 @@ export const copyFiles = async () => {
 export const updatePackage = async () => {
   const srcPath = path.join(qyOutput, '/package.json')
   let content = fs.readFileSync(srcPath, 'utf8')
+  let isUpdate = false
+  const reg1 = /dist\/dist/gi
+  if (reg1.test(content)) {
+    content = content.replace(reg1, '$1')
+  }
+
   const reg = /dist\//gi
   if (reg.test(content)) {
     content = content.replace(reg, '')
+    isUpdate = true
+  }
+  const reg2 = /\$1/gi
+  if (reg2.test(content)) {
+    content = content.replace(reg2, 'dist')
+    isUpdate = true
+  }
+  if (isUpdate) {
     fs.writeFileSync(srcPath, content, 'utf-8')
   }
 }
@@ -72,18 +86,26 @@ export const copyFullStyle = async () => {
 }
 
 export default series(
-  withTaskName('clean', () => run('pnpm -w run clean')),
+  withTaskName('clean', () => run(`pnpm -w run clean && pnpm -C ${qyRoot} run clean`)),
   withTaskName('createOutput', async () => {
     mkdir(qyOutput, { recursive: true })
     mkdir(path.resolve(qyOutput, 'dist'), { recursive: true })
     mkdir(path.resolve(qyOutput, 'es'), { recursive: true })
     mkdir(path.resolve(qyOutput, 'lib'), { recursive: true })
+    mkdir(path.resolve(qyRoot, 'dist/dist'), { recursive: true })
+    mkdir(path.resolve(qyRoot, 'dist/es'), { recursive: true })
+    mkdir(path.resolve(qyRoot, 'dist/lib'), { recursive: true })
   }),
-  // buildModules
-  withTaskName('buildModules', () => run('pnpm run -C ../../packages/chenwei02 start')),
 
-  // buildStyle
-  withTaskName('buildTheme', () => run('pnpm run -C ../../packages/theme build')),
+  parallel(
+    // buildModules
+    withTaskName('buildBundle', () => run('pnpm run -C ../../packages/chenwei02 start')),
+    // buildFullModules
+    buildFullBundle,
+    // buildStyle
+    withTaskName('buildTheme', () => run('pnpm run -C ../../packages/theme build'))
+  ),
+
   copyThemeBundle,
   copyFiles,
   copyFullStyle,
