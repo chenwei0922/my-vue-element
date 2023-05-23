@@ -1,1 +1,0 @@
-import{d as a,f as c,B as s,o as t,c as l,D as o,F as r}from"./framework.c23f525d.js";const f=a({__name:"basic",setup(m){const e=c("close");return(_,p)=>{const n=s("qy-icon");return t(),l(r,null,[o(n,{name:e.value},null,8,["name"]),o(n,{name:e.value,color:"red"},null,8,["name"])],64)}}});export{f as default};

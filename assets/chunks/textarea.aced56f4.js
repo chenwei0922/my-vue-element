@@ -1,0 +1,1 @@
+import{d as a,f as l,B as p,o as r,y as s}from"./framework.6bc5179a.js";const c=a({__name:"textarea",setup(u){const e=l("");return(m,o)=>{const t=p("qy-input");return r(),s(t,{modelValue:e.value,"onUpdate:modelValue":o[0]||(o[0]=n=>e.value=n),type:"textarea",rows:4},null,8,["modelValue"])}}});export{c as default};
