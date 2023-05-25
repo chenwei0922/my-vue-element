@@ -21,8 +21,8 @@ let codeToHtml: any = null
 })()
 
 export default defineConfig({
-  title: '网站标题',
-  description: '网站描述',
+  title: '陈十一',
+  description: '陈十一技术网站',
   author: '陈十一',
   // 根目录
   base: '/qy-element/',
@@ -72,7 +72,7 @@ export default defineConfig({
   lastUpdated: true,
 
   themeConfig: {
-    siteTitle: '@chenwei02/qy-element',
+    siteTitle: '十一笔记',
     // 导航栏配置
     nav: [
       { text: '指南', link: '/guide/installation' },
@@ -87,8 +87,8 @@ export default defineConfig({
             { text: '安装', link: '/guide/installation' },
             { text: '快速开始', link: '/guide/quickstart' }
           ]
-        },
-        { text: '进阶', items: [{ text: 'xx', link: '/xx' }] }
+        }
+        // { text: '进阶', items: [{ text: 'xx', link: '/xx' }] }
       ],
       '/components': [
         {

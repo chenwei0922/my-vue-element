@@ -17,8 +17,6 @@ export const setTag = async () => {
   }
 }
 
-export const publish = async () => {
-  run(`npm publish`, qyOutput)
-}
+export const publish = async () => run(`npm publish`, qyOutput)
 
 export default series(publish, setTag)
