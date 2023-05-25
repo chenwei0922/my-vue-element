@@ -49,7 +49,7 @@ app.mount("#app")
 感谢所有参与者 !
 
 <a href="https://github.com/chenwei0922/qy-element/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=qmhc/chenwei0922/qy-element" />
+  <img src="https://contrib.rocks/image?repo=chenwei0922/qy-element" />
 </a>
 
 ## 许可证
