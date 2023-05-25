@@ -44,14 +44,14 @@ app.mount("#app")
 对于想要使用 QyElement 开发网站的开发人员，您请阅读 [快速开始](https://chenwei0922.github.io/qy-element/guide/quickstart.html)
 
 
-## Contributors
+## 贡献者
 
-Thanks for all contributions!
+感谢所有参与者 !
 
 <a href="https://github.com/chenwei0922/qy-element/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=qmhc/chenwei0922/qy-element" />
 </a>
 
-## License
+## 许可证
 
-MIT License
+MIT 许可协议
