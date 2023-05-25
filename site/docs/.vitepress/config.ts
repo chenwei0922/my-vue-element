@@ -84,6 +84,7 @@ export default defineConfig({
         {
           text: '基础',
           items: [
+            // { text: '测试', link: '/guide/test' },
             { text: '安装', link: '/guide/installation' },
             { text: '快速开始', link: '/guide/quickstart' }
           ]
