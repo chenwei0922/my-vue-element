@@ -75,6 +75,7 @@ export default defineConfig({
     siteTitle: '十一笔记',
     // 导航栏配置
     nav: [
+      { text: '图表', link: 'https://chenwei0922.github.io/echart-example/' },
       { text: '指南', link: '/guide/installation' },
       { text: '组件', link: '/components/button' }
     ],
