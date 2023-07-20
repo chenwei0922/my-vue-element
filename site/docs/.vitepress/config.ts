@@ -73,11 +73,21 @@ export default defineConfig({
 
   themeConfig: {
     siteTitle: '十一笔记',
+    outline: {
+      level: 2,
+      label: '章节导航'
+    },
+    docFooter: { prev: '上一篇', next: '下一篇' },
+    lastUpdatedText: '最近更新时间',
+    footer: {
+      copyright: 'Copyright © 2022 陈十一 All Rights Reserved '
+    },
     // 导航栏配置
     nav: [
       { text: '图表', link: 'https://chenwei0922.github.io/echart-example/' },
       { text: '指南', link: '/guide/installation' },
-      { text: '组件', link: '/components/button' }
+      { text: '组件', link: '/components/button' },
+      { text: '笔记', items: [{ text: 'Canvas 文档', link: '/notes/canvas/canvas' }] }
     ],
     // 这边来配置
     sidebar: {
