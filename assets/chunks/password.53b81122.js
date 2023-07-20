@@ -1,1 +1,0 @@
-import{d as t,f as a,B as p,o as l,y as r}from"./framework.6bc5179a.js";const _=t({__name:"password",setup(u){const e=a("123456");return(m,o)=>{const n=p("qy-input");return l(),r(n,{modelValue:e.value,"onUpdate:modelValue":o[0]||(o[0]=s=>e.value=s),"show-password":""},null,8,["modelValue"])}}});export{_ as default};
