@@ -37,6 +37,7 @@ notes/canvas/base
 > - `createRadialGradient(x0,y0,r0,x1,y1,r1)` 镜像渐变
 > - `createConicGradient(startAngle,x,y)` 锥形渐变
 > - `createLinearGradient(x0,y0,x1,y1)` 线性渐变
+> - `createPattern(image,repeaction)` 重复元图像
 
 ::: demo
 
@@ -71,5 +72,16 @@ notes/canvas/smile
 notes/canvas/gomoku
 
 :::
+
+## 贝塞尔曲线
+> - `quadraticCurveTo(cpx,cpy,x,y)` 二阶贝塞尔曲线
+> - `bezierCurveTo(cpx0,cpy0,cpx1,cpy1,x,y)` 三阶贝塞尔曲线
+
+::: demo
+
+notes/canvas/curve
+
+:::
+
 
 

@@ -10,8 +10,8 @@ const { proxy } = getCurrentInstance()
 onMounted(() => {
   // console.log(proxy)
   const canvas1 = document.createElement('canvas')
-  canvas1.width = 600
-  canvas1.height = 400
+  canvas1.width = 200
+  canvas1.height = 200
   proxy.$el.appendChild(canvas1)
   const context = canvas1.getContext('2d')
 
@@ -20,10 +20,10 @@ onMounted(() => {
    * 圆心，半径，开始角度，结束角度
    **/
   // 脸
-  context.arc(300, 200, 100, (0 * Math.PI) / 180, (360 * Math.PI) / 180)
+  context.arc(100, 100, 100, (0 * Math.PI) / 180, (360 * Math.PI) / 180)
   // 填充一个颜色
   // const gradient = context.createRadialGradient(300, 200, 0, 300, 200, 100)
-  const gradient = context.createRadialGradient(250, 150, 0, 250, 150, 150)
+  const gradient = context.createRadialGradient(50, 50, 0, 50, 50, 160)
   gradient.addColorStop(0, '#ccc')
   gradient.addColorStop(1, '#000')
   // context.fillStyle = '#0a0'
@@ -34,27 +34,27 @@ onMounted(() => {
   // 左眼
   // 两个不相关的图形之间，重新生成一个新的路径
   context.beginPath()
-  context.arc(250, 150, 20, 0, 2 * Math.PI)
+  context.arc(50, 50, 20, 0, 2 * Math.PI)
   context.stroke()
   // 跟beginPath配对使用，闭合路径
   context.closePath()
 
   // 右眼
   context.beginPath()
-  context.arc(350, 150, 20, 0, 2 * Math.PI)
+  context.arc(150, 50, 20, 0, 2 * Math.PI)
   context.stroke()
   context.closePath()
 
   // 鼻子
   context.beginPath()
   // ellipse(x,y,xR, yR, rotateAngel, startAngel, endAngle)绘制椭圆
-  context.ellipse(300, 200, 10, 30, 0, 0, 2 * Math.PI)
+  context.ellipse(100, 100, 10, 30, 0, 0, 2 * Math.PI)
   context.stroke()
   context.closePath()
 
   // 嘴巴
   context.beginPath()
-  context.arc(300, 200, 80, 0, Math.PI)
+  context.arc(100, 100, 80, 0, Math.PI)
   context.stroke()
   context.closePath()
 })

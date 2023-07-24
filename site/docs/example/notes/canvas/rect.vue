@@ -10,7 +10,7 @@ const { proxy } = getCurrentInstance()
 onMounted(() => {
   // console.log(proxy)
   const canvas1 = document.createElement('canvas')
-  canvas1.width = 600
+  canvas1.width = 640
   canvas1.height = 200
   proxy.$el.appendChild(canvas1)
   const context = canvas1.getContext('2d')
@@ -48,5 +48,16 @@ onMounted(() => {
 
   context.fillStyle = gradient
   context.fillRect(220, 0, 200, 200)
+
+  /**
+   * 重复元图像
+   */
+  const image = new Image()
+  image.src = '../../../images/notes/canvas/01.png'
+  image.onload = function () {
+    const p = context.createPattern(image, 'repeat')
+    context.fillStyle = p
+    context.fillRect(440, 0, 200, 200)
+  }
 })
 </script>
