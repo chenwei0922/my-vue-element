@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./chunks/framework.769053c1.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"notes/pack/gulp.md","lastUpdated":1706005739000}'),o={name:"notes/pack/gulp.md"};function s(r,c,n,p,d,_){return t(),a("div")}const m=e(o,[["render",s]]);export{i as __pageData,m as default};
