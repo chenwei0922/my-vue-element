@@ -92,7 +92,7 @@ export default defineConfig({
         items: [
           { text: 'Canvas 文档', link: '/notes/canvas/canvas' },
           { text: 'Svg 文档', link: '/notes/svg/basic' },
-          { text: 'esbuild 文档', link: '/notes/pack/esbuild' }
+          { text: '工具文档集', link: '/notes/pack/git' }
         ]
       }
     ],
@@ -122,7 +122,15 @@ export default defineConfig({
           ]
         }
       ],
-      '/notes/svg': [{ text: '基础', link: '/notes/svg/basic' }]
+      '/notes/svg': [{ text: '基础', link: '/notes/svg/basic' }],
+      '/notes/pack': [
+        { text: 'git', link: '/notes/pack/git' },
+        { text: 'pnpm', link: '/notes/pack/pnpm' },
+        { text: 'gulp', link: '/notes/pack/gulp' },
+        { text: 'rollup', link: '/notes/pack/rollup' },
+        { text: 'esbuild', link: '/notes/pack/esbuild' },
+        { text: 'regular', link: '/notes/pack/regular' }
+      ]
     },
     /*
     author: '陈十一',
