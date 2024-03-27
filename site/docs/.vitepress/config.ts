@@ -74,7 +74,7 @@ export default defineConfig({
   themeConfig: {
     siteTitle: '十一笔记',
     outline: {
-      level: 2,
+      level: 'deep',
       label: '章节导航'
     },
     docFooter: { prev: '上一篇', next: '下一篇' },

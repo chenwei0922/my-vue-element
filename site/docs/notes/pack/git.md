@@ -21,7 +21,23 @@ layout: doc
 - `git checkout -- <filename>`     放弃文件当前的改变
 - `git status`                     检查状态
 - `git reset HEAD <file>` 撤销某个文件的`add`操作
-- `git reset HEAD` 撤销所有文件的`add`操作
+- `git reset HEAD`        撤销所有文件的`add`操作
+- `git branch -M main`    重命名当前分支名为`main`分支
+
+## 重命名文件并区分大小写
+- `git config --global core.ignorecase false` 全局设置，大小写敏感
+- `git mv -f a.js A.js`                       重命名文件 a->A 
+
+## 删除文件夹
+> 当远端仓库同时存在小写 `home`和大写`Home`文件夹时，本地只有大写`Home`，可执行以下操作，完成远端小写文件夹的删除。
+
+```bash
+git rm -r <dir_path> 
+git restore <dir_path>
+//示例
+git rm -r src/pages/home
+git restore src/pages/Home
+```
 
 
 ## 初始化仓库
@@ -76,3 +92,13 @@ git push origin master
 - `git push origin :refs/tags/1.0.0`      删除标签1.0.0（远端删除）
 - `git push --tags`                       将本地tag推送到远端
 - `git checkout -b branch_name tag_name`  从tag标签新建分支
+
+## 撤销`add`
+- `git restore --staged <file>`  撤销某个文件的 `add`
+
+## 设置`git`正确识别中文文件名
+```bash
+git config --global core.quotepath false
+git config --global gui.encoding utf-8
+git config --global i18n.commitEncoding utf-8
+```
