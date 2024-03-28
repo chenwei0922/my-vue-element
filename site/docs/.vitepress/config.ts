@@ -85,8 +85,7 @@ export default defineConfig({
     // 导航栏配置
     nav: [
       { text: '图表', link: 'https://chenwei0922.github.io/echart-example/' },
-      { text: '指南', link: '/guide/installation' },
-      { text: '组件', link: '/components/button' },
+      { text: '组件', link: '/guide/installation' },
       {
         text: '笔记',
         items: [
@@ -98,7 +97,7 @@ export default defineConfig({
     ],
     // 这边来配置
     sidebar: {
-      '/guide': [
+      '/': [
         {
           text: '基础',
           items: [
@@ -106,22 +105,21 @@ export default defineConfig({
             { text: '安装', link: '/guide/installation' },
             { text: '快速开始', link: '/guide/quickstart' }
           ]
+        },
+        {
+          text: '组件',
+          items: [
+            { text: 'Button 按钮', link: '/notes/vue/button' },
+            { text: 'Breadcrumb 面包屑', link: '/notes/vue/breadcrumb' },
+            { text: 'Input 输入框', link: '/notes/vue/input' },
+            { text: 'Icon 图标', link: '/notes/vue/icon' },
+            { text: 'Radio 单选框', link: '/notes/vue/radio' },
+            { text: 'Checkbox 多选框', link: '/notes/vue/checkbox' }
+          ]
         }
         // { text: '进阶', items: [{ text: 'xx', link: '/xx' }] }
       ],
-      '/components': [
-        {
-          text: '基础组件',
-          items: [
-            { text: 'Button 按钮', link: '/components/button' },
-            { text: 'Breadcrumb 面包屑', link: '/components/breadcrumb' },
-            { text: 'Input 输入框', link: '/components/input' },
-            { text: 'Icon 图标', link: '/components/icon' },
-            { text: 'Radio 单选框', link: '/components/radio' },
-            { text: 'Checkbox 多选框', link: '/components/checkbox' }
-          ]
-        }
-      ],
+      '/notes/canvas': [{ text: '基础', link: '/notes/canvas/canvas' }],
       '/notes/svg': [{ text: '基础', link: '/notes/svg/basic' }],
       '/notes/pack': [
         { text: 'git', link: '/notes/pack/git' },

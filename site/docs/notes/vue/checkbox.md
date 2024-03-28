@@ -10,7 +10,7 @@ title: Checkbox
 
 ::: demo
 
-checkbox/basic
+vue-example/checkbox/basic
 
 :::
 
@@ -20,7 +20,7 @@ checkbox/basic
 
 ::: demo
 
-checkbox/group
+vue-example/checkbox/group
 
 :::
 

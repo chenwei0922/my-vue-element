@@ -1,8 +1,8 @@
 <template>
-	<qy-input v-model="input" clearable />
+  <qy-input v-model="input" type="textarea" :rows="4" />
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-const input = ref('hello world')
+const input = ref('')
 </script>

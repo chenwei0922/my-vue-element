@@ -1,5 +1,5 @@
 <template>
-	<qy-input v-model="input" disabled />
+  <qy-input v-model="input" type="textarea" autosize />
 </template>
 
 <script lang="ts" setup>

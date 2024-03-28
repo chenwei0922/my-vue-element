@@ -8,7 +8,7 @@ title: Input
 
 ::: demo vue
 
-input/basic
+vue-example/input/basic
 
 :::
 
@@ -18,7 +18,7 @@ input/basic
 
 ::: demo
 
-input/disabled
+vue-example/input/disabled
 
 :::
 
@@ -28,7 +28,7 @@ input/disabled
 
 ::: demo
 
-input/clearable
+vue-example/input/clearable
 
 :::
 
@@ -38,7 +38,7 @@ input/clearable
 
 ::: demo
 
-input/password
+vue-example/input/password
 
 :::
 
@@ -48,7 +48,7 @@ input/password
 
 ::: demo
 
-input/textarea
+vue-example/input/textarea
 
 :::
 
@@ -57,7 +57,7 @@ input/textarea
 
 ::: demo
 
-input/textarea-autosize
+vue-example/input/textarea-autosize
 
 :::
 
@@ -67,7 +67,7 @@ input/textarea-autosize
 
 ::: demo
 
-input/length
+vue-example/input/length
 
 :::
 
@@ -77,7 +77,7 @@ input/length
 
 ::: demo
 
-input/icon
+vue-example/input/icon
 
 :::
 <!-- ::: tip

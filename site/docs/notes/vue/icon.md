@@ -8,7 +8,7 @@ title: Icon
 
 ::: demo
 
-icon/basic
+vue-example/icon/basic
 
 :::
 

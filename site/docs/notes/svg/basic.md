@@ -45,7 +45,7 @@ layout: doc
 
 ::: demo
 
-notes/canvas/base
+notes-example/canvas/base
 
 :::
 
@@ -58,7 +58,7 @@ notes/canvas/base
 
 ::: demo
 
-notes/canvas/rect
+notes-example/canvas/rect
 
 :::
 
@@ -70,7 +70,7 @@ notes/canvas/rect
 
 ::: demo
 
-notes/canvas/circle
+notes-example/canvas/circle
 
 :::
 
@@ -78,7 +78,7 @@ notes/canvas/circle
 
 ::: demo
 
-notes/canvas/smile
+notes-example/canvas/smile
 
 :::
 
@@ -86,7 +86,7 @@ notes/canvas/smile
 
 ::: demo
 
-notes/canvas/gomoku
+notes-example/canvas/gomoku
 
 :::
 
@@ -96,7 +96,7 @@ notes/canvas/gomoku
 
 ::: demo
 
-notes/canvas/curve
+notes-example/canvas/curve
 
 :::
 

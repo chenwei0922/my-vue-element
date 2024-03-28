@@ -10,7 +10,7 @@ title: Radio
 
 ::: demo
 
-radio/basic
+vue-example/radio/basic
 
 :::
 
@@ -20,7 +20,7 @@ radio/basic
 
 ::: demo
 
-radio/group
+vue-example/radio/group
 
 :::
 
@@ -30,7 +30,7 @@ radio/group
 
 ::: demo
 
-radio/button
+vue-example/radio/button
 
 :::
 

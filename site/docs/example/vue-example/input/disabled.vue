@@ -1,8 +1,8 @@
 <template>
-	<qy-input v-model="input" show-password />
+  <qy-input v-model="input" disabled />
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-const input = ref('123456')
+const input = ref('')
 </script>
