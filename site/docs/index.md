@@ -2,9 +2,9 @@
 layout: home
 
 hero:
-  name: '@chenwei02/qy-element'
+  name: '陈十一个人博客'
   # text: 基于 Vue3 面向开发者的组件库
-  tagline: 基于 Vue3 面向开发者的组件库
+  tagline: 一系列工作日常总结
   # image:
   #   src: /logo.png
   #   alt: VitePress
@@ -17,12 +17,12 @@ hero:
       link: https://github.com/chenwei0922/qy-element
 features: 
   - icon: ⚡️ 
-    title: 使用指南 
-    details: 了解指南，帮助开发者搭建高效易用的产品
+    title: Vue 组件
+    details: vue3 自定义组件，可进行快速开发vue应用
   - icon: 🖖 
-    title: 组件
-    details: 使用前端框架封装的代码可以帮助开发者进行快速开发
+    title: 日常随笔
+    details: 配置库方法、正则使用、canvas、svg、pack打包工具等使用方式总结
   - icon: 🛠️ 
-    title: 其他
-    details: 待补充
+    title: react 组件
+    details: 待补充。vue3 自定义组件，可进行快速开发vue应用
 ---

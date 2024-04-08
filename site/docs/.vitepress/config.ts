@@ -127,7 +127,8 @@ export default defineConfig({
         { text: 'gulp', link: '/notes/pack/gulp' },
         { text: 'rollup', link: '/notes/pack/rollup' },
         { text: 'esbuild', link: '/notes/pack/esbuild' },
-        { text: 'regular', link: '/notes/pack/regular' }
+        { text: 'regular', link: '/notes/pack/regular' },
+        { text: 'mac配置', link: '/notes/pack/mac' }
       ]
     },
     /*
