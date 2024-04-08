@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a}from"./chunks/framework.769053c1.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"notes/pack/mac.md","lastUpdated":1711621311000}'),c={name:"notes/pack/mac.md"};function o(s,r,n,p,d,m){return t(),a("div")}const f=e(c,[["render",o]]);export{i as __pageData,f as default};
