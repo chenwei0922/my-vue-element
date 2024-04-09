@@ -1,9 +1,16 @@
 ---
+title: Svg 使用说明
+description: 本文主要介绍 Svg 的各种使用，并附加实例应用演示。
+lang: en-US
 layout: doc
 ---
 
-# Svg
-[Svg API](https://www.runoob.com/svg/svg-tutorial.html)
+# {{ $frontmatter.title }}
+::: info 摘要说明
+
+{{ $frontmatter.description }} [svg](https://www.runoob.com/svg/svg-tutorial.html)
+
+:::
 
 
 ## Svg 属性说明
@@ -100,5 +107,5 @@ notes-example/canvas/curve
 
 :::
 
-
-
+## 评论交流区
+<giscus />

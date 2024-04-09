@@ -25,11 +25,12 @@
     "markdown-it": "^13.0.1",
     "markdown-it-container": "^3.0.0",
     "shiki": "^0.14.2",
-    "vitepress": "1.0.0-alpha.64"
+    "vitepress": "1.0.2"
   },
   "dependencies": {
     "@algolia/client-search": "^4.16.0",
     "@chenwei02/qy-element": "workspace:^1.0.0",
+    "@giscus/vue": "^3.0.0",
     "vue": "^3.2.47"
   }
 }

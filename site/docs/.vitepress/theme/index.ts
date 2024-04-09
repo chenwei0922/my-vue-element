@@ -8,6 +8,7 @@ import '@chenwei02/qy-element/theme/index.css'
 import QyElementWrap from '../../vitepress/vp-wrap.vue'
 import QyElementTip from '../../vitepress/vp-tip.vue'
 import QyElementDemo from '../../vitepress/vp-demo.vue'
+import CommentGiscus from '../../vitepress/comment-giscus.vue'
 
 import './main.css'
 
@@ -18,6 +19,7 @@ export default {
     app.component('QyElementWrap', QyElementWrap)
     app.component('QyElementEnum', QyElementTip)
     app.component('Demo', QyElementDemo)
+    app.component('Giscus', CommentGiscus)
     app.use(QyElement)
   }
 }

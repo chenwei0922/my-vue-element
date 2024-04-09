@@ -5,6 +5,7 @@ import mdContainer from 'markdown-it-container'
 import { docRoot } from '@chenwei02/build-utils'
 import { getHighlighter } from 'shiki'
 import { fileURLToPath } from 'url'
+// https://vitepress.dev/reference/site-config
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -12,14 +13,11 @@ const demoComponentsPath = path.resolve(__dirname, '../vitepress/vp-demo.vue')
 console.log(demoComponentsPath)
 
 // 同步定义shiki的codeToHtml
-let codeToHtml: any = null
-;(async () => {
-  const res = await getHighlighter({
-    theme: 'material-theme-palenight'
-  })
-  codeToHtml = res.codeToHtml
-})()
+const { codeToHtml } = await getHighlighter({
+  theme: 'material-theme-palenight'
+})
 
+// https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: '陈十一',
   description: '陈十一技术网站',
@@ -27,6 +25,31 @@ export default defineConfig({
   // 根目录
   base: '/qy-element/',
   dest: 'public',
+  async buildEnd(siteConfig) {
+    // 配置网站基础路径
+    const baseURL = 'https://blog.clover.cn'
+    let siteMapStr = ''
+    for (const page of siteConfig.pages) {
+      siteMapStr += `${baseURL}/${page.replace(/md$/, 'html')}\n`
+    }
+    // 生成文件
+    try {
+      fs.writeFileSync(`${siteConfig.outDir}/sitemap.txt`, siteMapStr)
+    } catch (err) {
+      console.log('create sitemap.txt failed!', err)
+    }
+  },
+  head: [
+    /**
+     * 在head中插入一个script标签
+     * <script id="test">console.log(1)</script>
+     * ['script', {id:'test'}, `console.log(1)`]
+     */
+  ],
+  rewrites: {
+    // 重写路径
+    // '':''
+  },
   markdown: {
     // 显示代码行数
     lineNumbers: true,
@@ -72,6 +95,7 @@ export default defineConfig({
   lastUpdated: true,
 
   themeConfig: {
+    logo: '',
     siteTitle: '十一笔记',
     outline: {
       level: 'deep',
@@ -80,7 +104,10 @@ export default defineConfig({
     docFooter: { prev: '上一篇', next: '下一篇' },
     lastUpdatedText: '最近更新时间',
     footer: {
-      copyright: 'Copyright © 2022 陈十一 All Rights Reserved '
+      copyright: 'Copyright © 2022-present 陈十一 All Rights Reserved '
+    },
+    search: {
+      provider: 'local'
     },
     // 导航栏配置
     nav: [
