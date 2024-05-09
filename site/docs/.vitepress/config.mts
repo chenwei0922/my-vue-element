@@ -147,7 +147,10 @@ export default defineConfig({
         // { text: '进阶', items: [{ text: 'xx', link: '/xx' }] }
       ],
       '/notes/canvas': [{ text: '基础', link: '/notes/canvas/canvas' }],
-      '/notes/svg': [{ text: '基础', link: '/notes/svg/basic' }],
+      '/notes/svg': [
+        { text: '基础', link: '/notes/svg/basic' },
+        { text: '图标集合', link: '/notes/svg/icon' }
+      ],
       '/notes/pack': [
         { text: 'git', link: '/notes/pack/git' },
         { text: 'pnpm', link: '/notes/pack/pnpm' },
