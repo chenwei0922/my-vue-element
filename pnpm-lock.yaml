@@ -208,6 +208,9 @@ importers:
       '@chenwei02/qy-element':
         specifier: workspace:^1.0.0
         version: link:../packages/chenwei02
+      '@chenwei02/vue-icon':
+        specifier: 0.0.1-patch-1
+        version: 0.0.1-patch-1
       vue:
         specifier: ^3.2.47
         version: 3.2.47
@@ -231,8 +234,8 @@ importers:
         specifier: workspace:^1.0.0
         version: link:../packages/chenwei02
       '@chenwei02/vue-icon':
-        specifier: ^0.0.1
-        version: 0.0.1
+        specifier: 0.0.1-patch-1
+        version: 0.0.1-patch-1
       '@giscus/vue':
         specifier: ^3.0.0
         version: 3.0.0(vue@3.2.47)
@@ -748,8 +751,8 @@ packages:
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
 
-  /@chenwei02/vue-icon@0.0.1:
-    resolution: {integrity: sha512-ZVcx/p+vGZ+Q1nk/LgrCI/R8yOLrSiLhno/6+ah7tMl+KfNVK31Z45uPeJdoinqgm/eE/D3Fg0t74ZBi81TnUQ==}
+  /@chenwei02/vue-icon@0.0.1-patch-1:
+    resolution: {integrity: sha512-5Srji5xLnzCPEH1ZQGJbQn7O39nvDZ468Y4d9gYK8IPYjF8ytWbX4Ae+yXIUFSzGErvQ5kmag/RU7w3qDmXmfA==}
     dev: false
 
   /@docsearch/css@3.6.0:

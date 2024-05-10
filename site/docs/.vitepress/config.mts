@@ -149,7 +149,8 @@ export default defineConfig({
       '/notes/canvas': [{ text: '基础', link: '/notes/canvas/canvas' }],
       '/notes/svg': [
         { text: '基础', link: '/notes/svg/basic' },
-        { text: '图标集合', link: '/notes/svg/icon' }
+        { text: 'Vue Icon', link: '/notes/svg/iconVue' },
+        { text: 'React Icon', link: '/notes/svg/iconReact' }
       ],
       '/notes/pack': [
         { text: 'git', link: '/notes/pack/git' },

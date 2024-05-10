@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
-
+import { Logo } from '@chenwei02/vue-icon'
 const test = ref('hahah')
 </script>
 
@@ -15,4 +15,5 @@ const test = ref('hahah')
   </qy-breadcrumb>
   <qy-input />
   <qy-icon name="close" size="30px" style="color: red" />
+  <Logo />
 </template>
