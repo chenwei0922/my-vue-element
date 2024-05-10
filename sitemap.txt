@@ -14,7 +14,8 @@ https://blog.clover.cn/notes/pack/pnpm.html
 https://blog.clover.cn/notes/pack/regular.html
 https://blog.clover.cn/notes/pack/rollup.html
 https://blog.clover.cn/notes/svg/basic.html
-https://blog.clover.cn/notes/svg/icon.html
+https://blog.clover.cn/notes/svg/iconReact.html
+https://blog.clover.cn/notes/svg/iconVue.html
 https://blog.clover.cn/notes/vue/breadcrumb.html
 https://blog.clover.cn/notes/vue/button.html
 https://blog.clover.cn/notes/vue/checkbox.html
