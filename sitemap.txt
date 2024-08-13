@@ -5,6 +5,7 @@ https://blog.clover.cn/guide/test.html
 https://blog.clover.cn/index.html
 https://blog.clover.cn/markdown-examples.html
 https://blog.clover.cn/notes/canvas/canvas.html
+https://blog.clover.cn/notes/other/LRU.html
 https://blog.clover.cn/notes/pack/codepush.html
 https://blog.clover.cn/notes/pack/esbuild.html
 https://blog.clover.cn/notes/pack/git.html
