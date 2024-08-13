@@ -25,6 +25,7 @@ export default defineConfig({
   // 根目录
   base: '/qy-element/',
   dest: 'public',
+  //md --> html
   async buildEnd(siteConfig) {
     // 配置网站基础路径
     const baseURL = 'https://blog.clover.cn'
@@ -118,7 +119,8 @@ export default defineConfig({
         items: [
           { text: 'Canvas 文档', link: '/notes/canvas/canvas' },
           { text: 'Svg 文档', link: '/notes/svg/basic' },
-          { text: '工具文档集', link: '/notes/pack/git' }
+          { text: '工具文档集', link: '/notes/pack/git' },
+          { text: 'LRU & TTL 内存管理', link: '/notes/other/LRU' }
         ]
       }
     ],
@@ -160,7 +162,8 @@ export default defineConfig({
         { text: 'esbuild', link: '/notes/pack/esbuild' },
         { text: 'regular', link: '/notes/pack/regular' },
         { text: 'mac配置', link: '/notes/pack/mac' }
-      ]
+      ],
+      '/notes/other': []
     },
     /*
     author: '陈十一',
